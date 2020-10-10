@@ -1,3 +1,3 @@
 # Christopher Chou's Personal Blog
 
-[Website](https://cswithchris.com)
+My personal [Website](https://cswithchris.com) 
