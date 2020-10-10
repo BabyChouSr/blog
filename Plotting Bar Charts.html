@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+         .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+         .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+         
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/barplotback.PNG')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Plotting Bar Charts</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 19, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="aedd6c52-e39e-4f19-a237-d5d1015b3273" class="page sans"><header><h1 class="page-title">Plotting Bar Charts</h1></header><div class="page-body"><p id="da84fc79-245b-4072-87d9-492971c4c5ad" class="">In this blog, I will be going over how to plot bar charts with matplotlib.</p><p id="07c65953-825a-4c6a-9e5e-8a4543eb94cb" class="">
+</p><h3 id="11ad7ef5-b626-42ae-b786-ceda0948efb5" class="">Importing Libraries</h3><pre id="87dcbbdf-dfe5-4d9b-a68b-363976f18903" class="code"><code class = "lang-python">import matplotlib.pyplot as plt
+import numpy as np</code></pre><p id="f3c7abdf-cc0e-4d09-a904-72bc0d524699" class="">We we will be using matplotlib and numpy</p><p id="89d0b296-4ada-425a-9e2f-36210bf8d88d" class="">
+</p><h3 id="6dafad9c-1d6b-43ea-8899-535ae2c19c4c" class="">Introductory Data</h3><p id="6c97c839-5ae7-4ce9-a6f4-ba50560a9af5" class="">Using dummy data, we start with this following code. Notice how we use &quot;plt.bar&quot; to signify we are using a bar chart. We will also be using the style &quot;fivethirtyeight.&quot;</p><pre id="35175053-5131-4920-902c-6af7b719f3f3" class="code"><code class = "lang-python">x = [1,2,3,4,5,6,7,8,9,10]
+Alice = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
+
+plt.style.use(&quot;fivethirtyeight&quot;)
+plt.bar(x,y1, color = &quot;#BF85B8&quot;, label = &quot;Alice&quot;)
+plt.xlabel(&quot;Years since 1990&quot;)
+plt.ylabel(&quot;Money Earned&quot;)
+plt.title(&quot;Money Earned By Different People&quot;)
+plt.legend()
+plt.show()</code></pre><figure id="0eaf4b53-6db8-4741-85df-5989c8c1c8c5" class="image"><a href="Plotting%20Bar%20Charts/Untitled.png"><img style="width:459px" src="Plotting%20Bar%20Charts/Untitled.png"/></a><figcaption>Introductory Bar Graph</figcaption></figure><p id="98e9fd20-892f-47e0-bb0c-d2b5406755b4" class="">
+</p><h3 id="0707008d-fa2b-442b-975a-1ef2f0bcf636" class="">Adding People</h3><p id="907a8b0f-c331-447a-b247-b9b3d3e5ea32" class="">Let&#x27;s say we want to add people so that we  could compare Alice&#x27;s growth in money compared to other people. This will require us to manipulate the x array in order to shift the bars next to each other. </p><pre id="cb734e8f-57f6-4146-bab7-cf53f38c2d61" class="code"><code class = "lang-python">#Previously x = [1,2,3,4,5,6,7,8,9,10]
+#Now, we have to shift it; we will use np.arange()
+
+x_indexes = np.arange(len(x))
+width = 0.25
+
+#I will also add new people, Note that this is all dummy data
+Bob = [1232,2346,3462,4342,5141,6234,7234,8798,9123,10543] 
+Carl = [902,1251,2355,3431,1245,2355,7453,2314,6345,8464]</code></pre><p id="7f5098ec-0f48-4b2e-928e-d9af60011f91" class="">After we have the new indexes, we have to add the new people and the required indexes to the bar plots. Subtracting the width shifts the bar left, adding it shifts the plot to the right, not doing anything keeps it in the middle</p><pre id="93c4bc1c-fdfb-4d10-9333-190a7f103f9b" class="code"><code class = "lang-python">#Let&#x27;s say we want it in alphabetical order: Alice, Bob, Carl
+#Same Style
+plt.style.use(&quot;fivethirtyeight&quot;)
+
+plt.bar(x_indexes - width,Alice, width = width, color = &quot;#BF85B8&quot;, label = &quot;Alice&quot;)
+plt.bar(x_indexes, Bob, width = width, color = &quot;#85BF86&quot;, label = &quot;Bob&quot;)
+plt.bar(x_indexes +  width,Carl, width = width, color = &quot;#64A4D6&quot;, label = &quot;Carl&quot;)
+
+
+#Same as before, to plot
+plt.xlabel(&quot;Years since 1990&quot;)
+plt.ylabel(&quot;Money Earned&quot;)
+plt.title(&quot;Money Earned By Different People&quot;)
+plt.legend()
+plt.show()</code></pre><figure id="bc3ec20a-d6eb-4ad9-9203-06bcbe9da623" class="image"><a href="Plotting%20Bar%20Charts/Untitled%201.png"><img style="width:460px" src="Plotting%20Bar%20Charts/Untitled%201.png"/></a><figcaption>Adding Extra People</figcaption></figure><p id="0c658a68-1785-40e8-af3d-6deb5ee730b3" class="">
+</p><h3 id="3b7fa517-d5d4-4d35-a557-565b5aa2c55c" class="">Horizontal Bar Charts</h3><p id="dcf37538-fc8f-4538-ac21-e29b32dabb1f" class="">Let&#x27;s Say we want to plot horizontally instead.</p><p id="e92c85b2-1745-4904-8e02-797a70bd0c10" class="">We need to define several new variables that I will explain.</p><pre id="d711e44d-7e15-42d0-b98b-5d94daff4953" class="code"><code class = "lang-python">fig ,ax  = plt.subplots() #Figure and the Axes, So that we can manipulate the axes labels
+
+#Dummy Data, Comparing Money with Job
+money = [1000,2000,3000,4000,5000]
+Job = [&quot;Developer&quot;, &quot;Restaurant Worker&quot;, &quot;Janitor&quot;, &quot;Teacher&quot;, &quot;Doctor&quot;]
+xpos = np.arange(len(Job)) #Using numpy to convert Job (categorical data)
+													 # to something that matplotlib can use
+
+
+plt.barh(xpos, money) #plots the data
+ax.set_yticks(xpos) # Puts the numerical quantities of the money
+ax.set_yticklabels(Job) # Puts the people&#x27;s names on it
+ax.set_ylabel(&quot;Occupation&quot;) #Labels yaxis as occupation
+ax.set_xlabel(&quot;Money&quot;) #Labels xaxis as money
+ax.set_title(&quot;Yearly Earnings By Job&quot;) # Sets title</code></pre><figure id="ea10dc97-c7d8-4678-8afb-24fff8390bc2" class="image"><a href="Plotting%20Bar%20Charts/Untitled%202.png"><img style="width:548px" src="Plotting%20Bar%20Charts/Untitled%202.png"/></a><figcaption>Horizontal Bar Chart</figcaption></figure><p id="68836918-85c6-4747-87a1-09ddc175af2e" class="">We get this chart after plotting it out. </p><p id="0144f856-0180-470f-a583-af0112e2af0e" class="">
+</p><h3 id="f11a4b60-b8c2-4cbf-8629-46c6a10e2860" class="">Conclusion</h3><p id="ef13e14a-8ee7-4e9f-8f47-63f82c546c43" class="">I hope you guys enjoyed reading this blog and understanding how to implement bar charts with matplotlib. Thank you for staying so long!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+</body>
+
+</html>
+</body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+         .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+         .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+         
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/eqplotback.PNG')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Equation Plotting with Python</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 18, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="b10e6925-3c47-41fe-93a7-d2d55fd76a05" class="page sans"><header><h1 class="page-title">Equation Plotting with Python</h1></header><div class="page-body"><p id="a390c1fe-c4d6-4da3-9259-0a7efe497ba5" class="">In this tutorial, I will be going into how to code various equations in Python using Matplotlib.</p><h3 id="8941e768-3751-452a-9f11-9633c6e9c818" class="">Libraries</h3><p id="493e605b-e0fc-48a4-a7cd-93a667afe9bd" class="">You will need matplotlib and numpy in order to do data visualization with Python. Matplotlib is your basic graphing library while numpy makes it easier to deal with matrices as well as more complex operations with linear algebra or statistics.</p><pre id="3a1be663-4844-4964-ac32-5546ab220024" class="code"><code class = "lang-python">import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline</code></pre><p id="310ae9db-8faa-42d6-9d78-b6847333bbb2" class="">
+</p><h3 id="b67042d3-7476-4ed2-870d-d925a4b3301e" class="">Motivating Example with cos(x)</h3><p id="63d907ca-3528-40aa-a3bb-806749dff729" class="">Let&#x27;s say we want to plot the trigonometric function cos(x).</p><p id="c41b9059-20df-495d-80db-79701b0d38ff" class="">This can be as simple as </p><pre id="b4784e75-6aee-41e2-92da-c2db9f0554f4" class="code"><code class = "lang-python">x = [-4,-3,-2,-1,0,1,2,3,4]
+y = np.cos(x)
+plt.plot(x,y)
+plt.show()</code></pre><p id="9dce3500-ec34-47ec-be8d-52e714df466c" class="">You put in your x-array and then simply use a numpy function and you get a graph that looks like this:</p><figure id="8929090f-e022-4f32-8204-a5added62ac1" class="image"><a href="Equation%20Plotting%20with%20Python/Untitled.png"><img style="width:378px" src="Equation%20Plotting%20with%20Python/Untitled.png"/></a><figcaption>Plot of cos(x) using previous method</figcaption></figure><p id="37d9fdbf-4c7d-4bae-8e79-eec25a3a368f" class="">This might look very jagged because we are inputting discrete inputs, instead we could call a numpy function called np.linspace().</p><pre id="de0616bf-3f57-4f0c-8959-83a35c7598f2" class="code"><code class = "lang-python">x = np.linspace(-4,4)
+y = np.cos(x)
+plt.plot(x,y)
+plt.show()</code></pre><p id="8d561444-121b-4edb-9ca5-f211cecb0a14" class="">This would plot over continuous inputs, giving us </p><figure id="797a76e0-4ce6-498e-8fa2-1357c0d22011" class="image"><a href="Equation%20Plotting%20with%20Python/Untitled%201.png"><img style="width:390px" src="Equation%20Plotting%20with%20Python/Untitled%201.png"/></a><figcaption>Plot of cos(x) using new method</figcaption></figure><p id="20117fe0-53a8-41cf-883e-e2a6272c2463" class="">
+</p><h3 id="f28fd78b-d562-4f0b-b00f-6a85a2ad3b46" class="">Extra Styles and Decorations</h3><p id="b5033a30-b752-4efe-babc-4b10fdc077f2" class="">Say we wanted to label the axes or add titles. This is incredibly simple with Python.</p><p id="85d2dba7-c709-4c09-9cf8-3b39d02bb841" class="">To label the x and y axes, we add</p><pre id="37bc4733-1391-48a7-a741-91305e2ad449" class="code"><code class = "lang-python">plt.xlabel(&quot;x&quot;)
+plt.ylabel(&quot;y&quot;)</code></pre><p id="0afba708-4fe2-491f-b6e1-3edad51c2327" class="">which will get us</p><figure id="5eaa023a-8029-4741-b263-1cc8d948ad9a" class="image"><a href="Equation%20Plotting%20with%20Python/Untitled%202.png"><img style="width:404px" src="Equation%20Plotting%20with%20Python/Untitled%202.png"/></a><figcaption>Plot with x,y axes</figcaption></figure><p id="237f0182-7422-4f60-9402-7f7534ddadf6" class="">Then, to add a title as well as a label on the graph, we add</p><pre id="9459f1ce-0ec6-4d07-a7ce-a989be512da5" class="code"><code class = "lang-python">plt.title(&quot;Plot of cos(x)&quot;) #Title of the plot
+plt.plot(x,y, label = &quot;cos(x)&quot;) # Add the label = &quot;cos(x)&quot; so it shows up on the legend
+plt.legend() # so the label shows up</code></pre><figure id="2355f1b4-32d5-4d4f-9ad9-fa8a49790f0e" class="image"><a href="Equation%20Plotting%20with%20Python/Untitled%203.png"><img style="width:409px" src="Equation%20Plotting%20with%20Python/Untitled%203.png"/></a><figcaption>Plot with titles and labels</figcaption></figure><p id="f84b7abd-70c9-4866-a211-299be7dadbf5" class="">Lastly, let&#x27;s try to add another graph on it and then also change the style.</p><pre id="05db4cd3-4b92-4285-bfa6-305e0c26195a" class="code"><code class = "lang-python">plt.style.use(&quot;ggplot&quot;) # Style of the Plot
+y2 = np.sin(x)
+plt.plot(x,y2, label = &quot;sin(x)&quot;) # adding sin(x) to the plot
+plt.title(&quot;Plot of cos(x) and sin(x)&quot;) # changing title</code></pre><figure id="155796fe-805a-45bd-bf5d-888b7ac94c39" class="image"><a href="Equation%20Plotting%20with%20Python/Untitled%204.png"><img style="width:398px" src="Equation%20Plotting%20with%20Python/Untitled%204.png"/></a><figcaption>New plot with cos(x) and sin(x)</figcaption></figure><p id="bb8e6532-6371-4f10-ab0a-7a4e240312a2" class="">
+</p><h3 id="afc69f6a-a4d3-458a-8ce5-4a551230188c" class="">Conclusion</h3><p id="59ea7215-54a8-402e-a4f9-aae6a69df0e9" class="">Through this blog, you were able to learn how to plot mathematical formulas like cos(x) quite easily. It goes beyond just this trigonometric function, try for yourself!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

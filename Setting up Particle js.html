@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.66em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/particleJsBack.PNG')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Setting up Particle.js</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 23, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="5d8bdcb3-541e-4aa6-8138-a3a0f9012477" class="page sans"><header><h1 class="page-title">Setting up Particle.js</h1></header><div class="page-body"><p id="2ec1ad6e-c38f-4d42-bba7-7333dadbed33" class="">Particle.js is an incredibly cool looking background add-on that makes your web application look extremely progressive and nice.</p><p id="100651c1-aebd-449f-9576-998e6eaac3fd" class="">Just see for yourself!</p><figure id="e9a411ee-4d4e-4d76-bbbc-83bdb59b4e23"><div class="source"><a href="https://codepen.io/VincentGarreau/pen/pnlso">https://codepen.io/VincentGarreau/pen/pnlso</a></div><figcaption>Particle.js Demo</figcaption></figure><p id="e8bcf332-dbbd-4e9c-8f2a-814a30945a89" class="">
+</p><h3 id="f03a9b2a-cd3e-4896-9ce1-bc929b132b80" class="">Downloading from Github</h3><p id="d630fc11-d55f-4645-bdab-840a5c0acd59" class="">First, you need to download two javascript files from Github. The link is down below</p><figure id="1e81aece-7d27-4996-92ef-ff88495f7b04"><a href="https://github.com/VincentGarreau/particles.js" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">VincentGarreau/particles.js</div><div class="bookmark-description">Configure, export, and share your particles.js configuration on CodePen: http://vincentgarreau.com/particles.js/ CodePen demo: http://codepen.io/VincentGarreau/pen/pnlso Load particles.js and configure the particles: index.html app.js particles.json https://www.npmjs.com/package/particles.js npm install particles.js bower install particles.js --save gem &#x27;rails-assets-particles.js&#x27; https://atmospherejs.com/newswim/particles meteor add newswim:particles Please use this host or your own to load particles.js on your projects http://www.jsdelivr.com/#!particles.js</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/VincentGarreau/particles.js</div></div><img src="https://avatars3.githubusercontent.com/u/961898?s=400&amp;v=4" class="bookmark-image"/></a></figure><p id="fcbf8101-5f7b-4056-803a-99a2441f0ee5" class="">Press the green &quot;clone or download&quot; button to download the entire respository.</p><p id="327e3b29-1e4a-46f6-8e8d-a84a31993ea8" class="">
+</p><p id="25d6d56f-96bf-463f-baa8-adc79746df04" class="">The two files you will be looking for after downloading it is &quot;particles.js&quot; and &quot;app.js.&quot; </p><figure id="f01220c2-8a59-4f8b-9d9f-fd24b20c7339" class="image"><a href="Setting%20up%20Particle%20js/Untitled.png"><img style="width:663px" src="Setting%20up%20Particle%20js/Untitled.png"/></a></figure><p id="50b9b0ff-4bf1-438a-b530-0e844324d963" class="">Particle.js is simple enough to find as it is in the first folder you see.</p><p id="ede0c3b4-51d6-4d94-97e4-0688146eea91" class="">To find app.js, you have to go into demo &gt; js &gt; app.js </p><p id="4cf59db2-ea03-4188-a642-7ce3ff2bd83b" class="">You want to extract these two files into your main folder that you are working in. This should look something like this:</p><figure id="9e2c0ae0-fed4-4ab0-a94e-3e446ec2c848" class="image"><a href="Setting%20up%20Particle%20js/Untitled%201.png"><img style="width:519px" src="Setting%20up%20Particle%20js/Untitled%201.png"/></a></figure><p id="9d124bae-c342-4771-880f-a122336eca6f" class="">I created my own html file and a css file.</p><p id="a069ac63-9db5-470c-b445-3479f8d31fae" class="">
+</p><h3 id="a982fd89-07c0-4bc2-8921-1c33e13d1a1b" class="">Some Quick Coding</h3><p id="c931c719-4507-4f2e-aa98-ee55764dec28" class="">In the html file, you should call the two particles script and the app script as well as create a div so that the particles can show up. </p><pre id="74afd1b5-21fc-49d1-a8cb-b4989bfa8bc4" class="code"><code class = "language-html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel = &quot;stylesheet&quot; href = &quot;style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id = particles-js&gt;&lt;/div&gt;
+        &lt;script src = &quot;particles.js&quot;&gt;&lt;/script&gt;
+        &lt;script src = &quot;app.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="0e99a150-c372-472d-8933-a82ecf844de2" class="">I also called the style.css file that I am using</p><p id="e337d6f8-b16c-4557-b674-9cbd8d9b3790" class="">The css file should look something like this</p><pre id="f346ee43-938b-4843-b733-8d7e30f19805" class="code"><code class = "lang-css">body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#particles-js {
+    height: 100%;
+    background: #6666ff;
+}</code></pre><p id="b3182004-ea73-43d3-8ed7-d8e0412a04b2" class="">The background color is whatever you want, this one just allowed my background to look blue which I like. </p><p id="5959c498-e1bd-4945-985a-63cd2fdaf96b" class="">And That&#x27;s really IT!</p><p id="a78b58d3-0e77-4613-b23b-55d280ee96a2" class="">
+</p><h3 id="aa04af00-2b45-4aa7-ad52-6e2dd870dadf" class="">FINAL PRODUCT</h3><figure id="069222d1-0bb3-4400-8d13-7191ac22997d" class="image"><a href="Setting%20up%20Particle%20js/Untitled%202.png"><img style="width:528px" src="Setting%20up%20Particle%20js/Untitled%202.png"/></a><figcaption>Particle.js Screen</figcaption></figure><p id="28d21001-a007-4257-a8cb-a69fb2c12c0d" class="">
+</p><h3 id="bf0b8601-a937-4b9d-bdc1-e49769d5ec80" class="">Conclusion </h3><p id="5b86c7e0-fa9b-442b-b895-9a367a5fc808" class="">I hoped you guys enjoyed this tutorial on how to set up Particle.js on your web application and that you are inspired to continue to try for yourself.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+   <script src="js/prism.js"></script>
+
+</body>
+
+</html>

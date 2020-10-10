@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href = "css/prism.css" rel = "stylesheet">
+   <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/flaskGuideback.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Setting Up Flask</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 15, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+           <article id="7d0adcf8-5670-4adf-9c71-d9a4f44b98c4" class="page sans">
+      <div class="page-body"><h3 id="f0081365-3d8d-4084-9271-17c64fd7cbed" class="">Why?</h3><p id="31d3ffd7-aa98-40a2-8fc0-12ede59502b9" class="">What is a virtual environment? Think about it like a portable environment. It’s like having a mini-system interpreter in your own environment. Its disposable and portable which is why its useful to deploy on your own server.</p><h3 id="f1c0780a-6f0b-4bcf-9aa4-5db9fe0ec407" class="">Install virtualenv</h3><figure id="30804c32-263c-4b4b-bb50-7e92a77fa033" class="image"><a href="Flask%20A%20Guide/image-20200314225957553.png"><img style="width:682px" src="Flask%20A%20Guide/image-20200314225957553.png"/></a></figure><h3 id="7bc1bc85-c16e-4a5f-bee0-d95a185e62e4" class="">Creating a Virtual Environment</h3><figure id="0f2acf54-8b01-4ab3-b596-f994866981f9" class="image"><a href="Flask%20A%20Guide/image-20200314230042100.png"><img style="width:654px" src="Flask%20A%20Guide/image-20200314230042100.png"/></a></figure><p id="6908b8a4-37e1-43c2-be44-9aa91adb3ba0" class="">cd desktop - changes to the desktop directory because that’s where I want my virtual environment</p><p id="ef0d287d-fca8-4b80-9e1a-2792dd6aa070" class="">virtualenv “NAME OF VIRTUAL ENVIRONMENT” (I named it environment)</p><h3 id="55bf7d55-9242-4686-b124-dce7e6b868b9" class="">Running a Virtual Environment</h3><figure id="23acc36b-5a17-4f1c-8af6-13735b084ba6" class="image"><a href="Flask%20A%20Guide/image-20200314230256024.png"><img style="width:442px" src="Flask%20A%20Guide/image-20200314230256024.png"/></a></figure><p id="4b8dbd81-4dcb-4f88-b4b3-0d5c7fac5076" class="">cd environment - changes to the environment directory</p><p id="dbe4e21a-3571-49dc-b47a-2ce6f6820316" class="">scriptsessentially activates the virtual environment</p><p id="f1d22182-0afa-4aa5-a27f-75587a27293b" class="">(environment) on the side just shows that the virtual environment is running</p><h3 id="16786d8f-76fc-4c11-8ffb-7c11fb37ae46" class="">Creating folder for flask project</h3><figure id="384f06d5-a0f9-4f04-986e-614089063723" class="image"><a href="Flask%20A%20Guide/image-20200314230621988.png"><img style="width:573px" src="Flask%20A%20Guide/image-20200314230621988.png"/></a></figure><p id="1bd47e73-88ce-4e94-85f7-dc599c09b193" class="">mkdir (make directory or folder)</p><p id="dd68c987-db48-4ec0-8294-dff89d0f8318" class="">Go within your folder and make a new python project</p><h3 id="e5937d38-88f9-4f49-b76b-64bcd3d88134" class="">Setting the System Interpreter for your Project</h3><figure id="92538493-3c4c-4da1-bf58-efb599d79f80" class="image"><a href="Flask%20A%20Guide/image-20200314230905530.png"><img style="width:760px" src="Flask%20A%20Guide/image-20200314230905530.png"/></a></figure><h3 id="f1001fd4-b538-449f-94c3-945e9260ce9b" class="">Install Flask</h3><figure id="b5940d90-5b56-4041-82f6-d0c8b3609441" class="image"><a href="Flask%20A%20Guide/image-20200314231045110.png"><img style="width:760px" src="Flask%20A%20Guide/image-20200314231045110.png"/></a></figure><h3 id="ff9f730b-e4b2-48ec-a67e-20ec19345151" class="">Create A Python File</h3><figure id="bfd5b2fb-123f-435c-8fa3-da2ebe8c7570" class="image"><a href="Flask%20A%20Guide/image-20200314231138079.png"><img style="width:760px" src="Flask%20A%20Guide/image-20200314231138079.png"/></a></figure><p id="7967759f-f4bc-435e-95d6-5ad722d11008" class="">call it app.py</p><p id="a6b78ab6-a76d-46b3-9cf4-3f5d59e9de69" class="">The following program is just the “hello world” of flask</p><pre id="abaf64a4-22d5-48c5-9715-6d0934d42f86" class="code"><code class = "lang-python">from flask import Flask, escape, request
+
+app = Flask(__name__)
+
+@app.route(&#x27;/&#x27;)
+def hello():
+    name = request.args.get(&quot;name&quot;, &quot;World&quot;)
+    return f&#x27;Hello, {escape(name)}!&#x27;</code></pre><h3 id="241c5560-b1e4-4d8f-8c3f-a6304d039dab" class="">Start the App</h3><figure id="de45e30f-d363-43c6-9a8e-b326a47bcbe1" class="image"><a href="Flask%20A%20Guide/image-20200314231317320.png"><img style="width:725px" src="Flask%20A%20Guide/image-20200314231317320.png"/></a></figure><h3 id="3a734d3a-1461-4d9d-8535-1e6ecfe2dc01" class="">It Works!</h3><figure id="c1b426c4-b73a-40e7-b46a-7a3e06c88280" class="image"><a href="Flask%20A%20Guide/image-20200314231336582.png"><img style="width:507px" src="Flask%20A%20Guide/image-20200314231336582.png"/></a></figure></div></div></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+
+</body>
+
+</html>

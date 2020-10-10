@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/soE.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Sieve of Eratosthenes</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on June 13, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="4a2d6ee1-70f6-426b-b830-0bfddee5d914" class="page sans"><header><h1 class="page-title">Sieve of Eratosthenes</h1></header><div class="page-body"><p id="b94fbd1c-82c8-4a2e-b7e8-a5fcdce54e73" class="">The concept behind the Sieve of Eratosthenes in Number Theory is that any number that is not a prime number can be derived from prime numbers. Thus, to find a prime number, we only have to find the numbers that are not divisible from previously found prime numbers.</p><p id="3882476a-5448-4db2-8a25-89b870dc01fe" class="">This shouldn&#x27;t come as a surprise to anyone that has learned prime factorization. After all, we are taught that any number can be simplified into powers of prime numbers. For example, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>=</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">8 = 2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> or <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>75</mn><mo>=</mo><msup><mn>5</mn><mn>2</mn></msup><mo>⋅</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">75 = 5^2 \cdot 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span><span>﻿</span></span> where 2,3,5 are all prime numbers.</p><h3 id="3ea2bb3e-b8e9-4ae7-b37c-e904b030f765" class="">Code in C++</h3><pre id="07f0b842-30c5-4832-a142-dbadd03a76a2" class="code"><code class = "lang-python">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+bool Prime(int n, vector&lt;int&gt; p) {
+    for (int i = 0; i &lt; p.size(); i++){
+        if (n %  p[i] == 0)  {return false;}
+    }
+    return true;
+}
+int main(){
+    int n = 100;
+    vector&lt;int&gt; primes;
+    for (int i = 2; i &lt;= n; i++){
+        if (Prime(i,primes)) {
+            primes.push_back(i);
+        }
+    }
+}</code></pre><p id="5afa30c4-df38-451d-adf8-c9b21256fcf2" class="">This code allows to check for each prime from 2 to 100.</p><p id="6372a1a4-c073-4af7-840d-44e023bc56e3" class="">We create a vector of all the prime numbers and check using the Prime function if the number is divisible or not by each of the numbers in the vector of primes. If the number is divisible shown in <code class = "lang-python">if (n % p[i] == 0)</code> then we return false because the number is not false. Otherwise, the number is a prime since it is not divisible by any prime number. We do this step for every number from 2 to 100 as shown by the for loop. </p><h3 id="a8e178f5-7852-442b-b280-737c331ed0b9" class="">Printing Answers</h3><pre id="d73f6ba1-926e-4f46-a5d9-15c242a7fca5" class="code"><code class = "lang-python">cout &lt;&lt; &quot;{&quot;;
+    for (int j = 0; j &lt; primes.size();j++){
+        if (j != primes.size() - 1) {cout &lt;&lt; primes[j] &lt;&lt; &quot;, &quot;;}
+        else {cout &lt;&lt; primes[j] &lt;&lt; &quot;}&quot;;}</code></pre><p id="eb8d70e1-2ccb-4558-93c3-a4cd1db411f6" class="">If we print out the answers using this simple algorithm that traverses each number in the vector of primes, we get an output of <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>7</mn><mo separator="true">,</mo><mn>11</mn><mo separator="true">,</mo><mn>13</mn><mo separator="true">,</mo><mn>17</mn><mo separator="true">,</mo><mn>19</mn><mo separator="true">,</mo><mn>23</mn><mo separator="true">,</mo><mn>29</mn><mo separator="true">,</mo><mn>31</mn><mo separator="true">,</mo><mn>37</mn><mo separator="true">,</mo><mn>41</mn><mo separator="true">,</mo><mn>43</mn><mo separator="true">,</mo><mn>47</mn><mo separator="true">,</mo><mn>53</mn><mo separator="true">,</mo><mn>59</mn><mo separator="true">,</mo><mn>61</mn><mo separator="true">,</mo><mn>67</mn><mo separator="true">,</mo><mn>71</mn><mo separator="true">,</mo><mn>73</mn><mo separator="true">,</mo><mn>79</mn><mo separator="true">,</mo><mn>83</mn><mo separator="true">,</mo><mn>89</mn><mo separator="true">,</mo><mn>97</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span><span class="mord">7</span><span class="mclose">}</span></span></span></span></span><span>﻿</span></span></p><p id="e336401c-a7d8-4e59-9459-8447fa93a305" class="">
+</p><h3 id="a58c4f6d-2f08-4619-a813-5614e4360cb1" class="">Conclusion</h3><p id="37055bc3-db27-4357-93dc-c1ee518d1f74" class="">I hope you guys enjoyed reading about how to use the sieve of Eratosthenes algorithm to find prime numbers! </p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

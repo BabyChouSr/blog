@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href = "css/prism.css" rel = "stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/stringBack.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Strings, Conditionals, Loops</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 27, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="ed789835-cdbc-4e24-bd00-ee8aebe28321" class="page sans"><header><h1 class="page-title">Strings, Conditionals, Loops</h1></header><div class="page-body"><p id="a3c87791-87e9-4109-abd8-7007ab36cb45" class="">In this blog, I will go over how Strings work, conditional statements, and loops.</p><p id="850380ce-7bf5-4102-aed9-c2b06fcddaf3" class="">As always, I will have a table of contents</p><nav id="0bc6a4d1-6b6a-4b52-9ca7-cf4ab22af34f" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3b968fda-e4c4-46fc-98a1-6b366f53f576">String as a Sequence</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bf08ca18-109b-4b36-9667-dc5f69babf04">The Length of a String</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cf09b4e0-3047-464f-84fd-f19645e20146">Substrings</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#94956537-23b1-4f6e-8bf4-a99f2011029b">Strings are immutable</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dacb9006-be85-49a3-8b11-b5987df0a06b">Conditional Statements</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8b10a492-d1f3-4d90-b7fd-e95fa3b9be5c">Loops</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f09ff436-3684-466c-b1e7-40ac9428be1b">Conclusion</a></div></nav><p id="43ef2d55-5bb9-4745-8c5e-692a0b493d3f" class="">
+</p><h3 id="3b968fda-e4c4-46fc-98a1-6b366f53f576" class="">String as a Sequence</h3><p id="0840778d-fef8-43f9-8734-bdb8575faea6" class="">A string is a sequence of characters. You can access the characters one at a time. </p><pre id="79838027-cd8a-418c-8a34-f2f8e6d58fb7" class="code"><code class = "lang-python">word = &quot;apple&quot;
+letter = word[0]</code></pre><p id="dcde92da-9662-44f8-91ab-b1cf827d2c5f" class="">The expression in the brackets is called the <strong>index. </strong>It indicates which character we want.</p><p id="581e2058-dbe8-4f13-92b5-389905bb6daf" class="">Thus, if we were to print out the string letter, we get &#x27;a&#x27;</p><p id="b7ffd5d5-08d6-481b-bfc8-7478efaf82b3" class="">The first letter does not start with index 1 like most people might think, but instead 0.</p><pre id="4b30e00a-2a95-44e9-bbd1-f08abc0a06b4" class="code"><code class = "lang-python">a p p l e
+0 1 2 3 4</code></pre><p id="bfc8deeb-3e36-4e3f-a228-08db130dfe91" class="">
+</p><h3 id="bf08ca18-109b-4b36-9667-dc5f69babf04" class="">The Length of a String</h3><p id="fd5ba904-0773-4977-bae7-3975aa8cde0b" class="">The built in <code class = "lang-python">len</code> feature returns the number of characters in a string.</p><pre id="229b1620-c57b-46f8-b1e3-59e6129f58a7" class="code"><code class = "lang-python">person = &quot;Charlie&quot;
+len(person)
+&gt;&gt;&gt; 7</code></pre><p id="0a04620a-0902-420a-981e-5e4f6845d782" class="">The length prints out the number of characters in a string.</p><p id="6231100e-f9c7-41b8-a11b-0f1732a1353a" class="">
+</p><h3 id="cf09b4e0-3047-464f-84fd-f19645e20146" class="">Substrings</h3><p id="2bf48e86-b9f7-46e7-ae0d-2c3f3e442fdd" class="">A segment of a string is called <strong>substring.</strong> </p><p id="b9add2c1-f423-40c7-be32-849756df9d89" class="">To see this in action</p><pre id="86fc0d79-b416-4634-bb6e-1b09b2a13f35" class="code"><code class = "lang-python">s = &quot;Christopher Chou&quot;
+firstName = s[0:11]
+&gt;&gt;&gt; &#x27;Christopher&#x27;
+lastName = s[12:16]
+&gt;&gt;&gt; &#x27;Chou&#x27;</code></pre><p id="833cc39a-b0ca-4069-9cee-199a73e9d289" class="">The operator [n:m] returns the part of the string from the &quot;n-eth&quot; character to the &quot;m-eth&quot; character, including the first but excluding the last.</p><p id="4545b90b-8f8d-407f-8d1a-78f036a22683" class="">We could do a shortcut to traverse from a certain index to the very end by just omitting the second index.</p><pre id="454456f8-39d8-49ec-9296-16c5b21f04a9" class="code"><code class = "lang-python">fruit = &#x27;banana&#x27;
+&gt;&gt;&gt; fruit[3:]
+&#x27;ana&#x27;
+&gt;&gt;&gt; fruit[0:]
+&#x27;banana&#x27;</code></pre><p id="a5e1d11e-3785-41a2-ade2-d0760de038fa" class="">
+</p><h3 id="94956537-23b1-4f6e-8bf4-a99f2011029b" class="">Strings are immutable</h3><p id="6fabcf56-8567-4e6f-988c-6fd2d9c34364" class="">We cannot change an existing String.</p><p id="32afa986-801a-4c5e-8f17-e636da6a1a0e" class="">Something like </p><pre id="4a753cc1-3cfa-467e-a86d-599a032d2e6a" class="code"><code class = "lang-python">message = &quot;hey bro&quot;
+message[0] = &quot;b&quot;</code></pre><p id="1f4f0fcb-6ea0-476e-846e-0d9cfa1c5baa" class="">Is not allowed because  item assignment is not supported.</p><p id="6140d020-41de-4c5b-8379-91acf61f6e12" class="">
+</p><h3 id="dacb9006-be85-49a3-8b11-b5987df0a06b" class="">Conditional Statements</h3><p id="da920d21-c996-4418-84bb-d1caae363bb2" class="">Before going through conditional statements, we must first define a new type called the <code class = "lang-python">boolean</code></p><p id="cdff31f6-0e39-4851-8d6e-c9fe4d336a27" class="">The Boolean evaluates whether a statement is <code class = "lang-python">True</code> or <code class = "lang-python">False</code></p><p id="68757a0b-ea74-4d52-a932-c621ebb41ba6" class="">We could use this to check if certain statements are true and then do an operation with that.</p><p id="58cbc2ac-4b27-45bf-bb10-de6ac5a24120" class="">We create something called if-elif-else statements which allows us to test through various cases.</p><p id="7aaca227-7c35-4815-9d65-801e52c863f6" class="">
+</p><p id="f89ef9ff-7d9d-4314-a354-534c4c4f97ea" class=""><strong>Example of the Structure</strong></p><p id="e6c6fbc7-ad59-472c-b61e-8adcff24bacd" class="">if &lt;condition 1&gt;:<div class="indented"><p id="6a7c71e9-4a6f-4d00-9025-4a4da6450aa3" class="">do something</p></div></p><p id="edf7b587-6277-43ee-8c93-4561a3372043" class="">elif &lt;condition 2&gt;:<div class="indented"><p id="1b4ae237-fb81-4ba8-a602-8b22bfa8e3f9" class="">do something:</p></div></p><p id="d2c2a368-cafa-4cec-b0d1-f2317d053b80" class="">else :<div class="indented"><p id="cc308e4f-70e5-415f-a3a6-ace2478f3f37" class="">do something</p></div></p><p id="ff5d34f8-60d6-4542-872e-e2c0f3051ddb" class="">What happens is we check the first condition and if that is true then we do the action and don&#x27;t check after that. </p><p id="651773fe-927b-4104-9737-f06214744340" class="">If we fail condition one, we check for condition 2 then if that is true, we do the action and jump out.</p><p id="c2a7c96b-feac-4778-8b85-4343a872fa9e" class="">Lastly, we do the action in the else statement if it failed all conditions.</p><p id="e052fd81-f930-4118-97e3-c1e4f02bc36d" class="">
+</p><p id="ad02183a-80ea-4f4f-b683-565694c38923" class=""><strong>Operators</strong></p><ol id="4676e9c7-eb5f-439c-9c62-f2e0cbaa8fe8" class="numbered-list" start="1"><li><code class = "lang-python">==</code>: Checks if two quantities are equal</li></ol><ol id="4e1c082a-bcd6-4d77-b295-b198126fa995" class="numbered-list" start="2"><li><code class = "lang-python">&gt;</code> : Checks if one quantity is greater than the other</li></ol><ol id="76f9d679-8c65-4ebf-be0e-cc15e2799ca5" class="numbered-list" start="3"><li><code class = "lang-python">&lt;</code>: Checks if one quantity is less than the other</li></ol><ol id="7a585e2a-ebe1-42fe-8671-ce79ef91c03b" class="numbered-list" start="4"><li><code class = "lang-python">!=</code>: Checks to see if two quantities are not equal.</li></ol><p id="2a9182c4-6341-47cd-8789-807af1480957" class="">
+</p><p id="9d4908a2-101c-47fc-bed7-0efcc5376387" class=""><strong>Case: String Comparison</strong></p><p id="9def1d0f-64c3-4a4f-8242-c012266b2b0e" class="">We can compare the lengths of strings by using these conditional statements. </p><p id="d45af075-9afc-48d8-b6d3-bb430a849117" class="">In plain English, let&#x27;s say we wanted to compare two words: &#x27;apple&#x27; and &#x27;orange&#x27; to see if they are equal. Obviously, they are not since they are different words.</p><pre id="43155969-94af-43ab-9185-3d64fcc92a3b" class="code"><code class = "lang-python">word_1 = &#x27;apple&#x27;
+word_2 = &#x27;orange&#x27;
+if word_1 == word_2:
+	print(&#x27;True&#x27;)
+else:
+	print(&#x27;False&#x27;)
+
+&gt;&gt;&gt; &#x27;False&#x27;</code></pre><p id="9a107488-f4d2-4fa2-b018-5c1ec24e7f0a" class="">This statement prints out a False since it is obvious that the words are not equal. We check equality by using <code class = "lang-python">==</code></p><p id="7d1a41d8-8ae4-4274-b9bd-3388626457c9" class="">
+</p><h3 id="8b10a492-d1f3-4d90-b7fd-e95fa3b9be5c" class="">Loops</h3><p id="2a7d7ff6-ba42-4ea6-a4de-90f60a18eefc" class="">Traversing a string with a <code class = "lang-python">for</code> loop</p><p id="5ed5ad3b-89fc-4f1c-a1e9-821a7c60bd76" class="">A for loops works like this: we loop over every letter in a certain String.</p><p id="80fd6e93-4f74-4327-9112-2c31d0225b67" class="">Putting this in code</p><pre id="0b9c67c8-dcee-4264-98e5-7a108df57fe0" class="code"><code class = "lang-python">s = &quot;Chris&quot;
+for i in s:
+	print(i)
+&gt;&gt;&gt; C
+&gt;&gt;&gt; h
+&gt;&gt;&gt; r
+&gt;&gt;&gt; i 
+&gt;&gt;&gt; s</code></pre><p id="4a2fd416-0794-49b5-bb89-ff602a85091f" class="">We traverse through every letter just like that.</p><p id="9aa574d7-2432-4952-8b46-37f6e999538a" class="">
+</p><p id="fee05997-384a-4f47-acba-4088fc5136a3" class="">We could rewrite this as a while loop.</p><p id="bd9869d1-862d-4c0c-b285-525fac6da5e8" class="">This would look something like this.</p><pre id="311994db-8ca4-47a5-b459-2e0a3b94c280" class="code"><code class = "lang-python">s = &#x27;Chris&#x27;
+index = 0
+while index &lt; len(s):
+	print(s[index])
+	index = index + 1
+&gt;&gt;&gt; C
+&gt;&gt;&gt; h
+&gt;&gt;&gt; r
+&gt;&gt;&gt; i
+&gt;&gt;&gt; s</code></pre><p id="5e55f818-6902-4c6d-9fec-864cf47014fd" class="">We start with the 0th index which corresponds with the first letter and iterate all the way until the last index which is <code class = "lang-python">len(s) - 1</code> We have to make sure to update the index with each iteration or this would be an infinite loop.</p><p id="f68ab171-9dbd-4b1f-89b2-ffc9b827d62a" class="">
+</p><h3 id="f09ff436-3684-466c-b1e7-40ac9428be1b" class="">Conclusion</h3><p id="242eb31c-211e-4cd3-bd5e-0db579127030" class="">There we go! We have finished going through Strings, conditional statements, and for loops. I hope that you feel motivated and ready to tackle your own problems using Python!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+</body>
+
+</html>

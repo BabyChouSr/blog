@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pcaback.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Principal Component Analysis</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 16, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="affe1bb5-3447-4d76-a16f-d415a763d820" class="page sans"><header><h1 class="page-title">Principal Component Analysis</h1></header><div class="page-body"><p id="1552d3dc-280e-486d-bb05-4ca786e62a7b" class="">The motivation behind using Principal Component Analysis is to solve the problem referred to as the curse of dimensionality. This is essentially the problem where there are thousands or even millions of features for each training instance which makes training extremely slow.</p><p id="4e5bf750-6660-47b0-ba75-83bec12897e7" class="">
+</p><h3 id="9118a221-5551-458e-8e54-edf59d7675a2" class="">Dimensionality Reduction</h3><p id="15582839-cd45-48e5-a6b8-f5aad8e3cc52" class="">In most real-word problems, the training instances are not spread out uniformly across all dimensions but instead highly correlated. Thus, we can often project a high dimension subspace to a lower-dimensional subspace. </p><p id="89ba2f68-e77b-44ca-9eb7-b02473996560" class="">
+</p><figure id="51fb08d8-f190-43e6-b527-993ef1a34455" class="image"><a href="Principal%20Component%20Analysis/Untitled.png"><img style="width:462px" src="Principal%20Component%20Analysis/Untitled.png"/></a><figcaption>Example of Data</figcaption></figure><p id="4f774c6d-cb0e-4302-9270-2420fbcc6462" class="">Through Principal Component Analysis, we could project the data from a 2-Dimensional Subspace to a 1- Dimensional subspace along the &quot;PCA 1st Dimension.&quot; </p><p id="6f3b4f09-a18b-4a12-8e06-3414b05fbc55" class="">
+</p><h3 id="1cf7a7f6-7207-4567-8aae-f2eff821daa6" class="">PCA Algorithm</h3><ol id="ef73a857-88ed-4b02-ac32-b1feb6efccea" class="numbered-list" start="1"><li>Standardize the data </li></ol><ol id="8cf0221f-494a-4201-bb78-938c71b6f910" class="numbered-list" start="2"><li>Compute the eigenvectors and the eigenvalues</li></ol><ol id="37986994-e052-4556-88e5-dacb2447c18d" class="numbered-list" start="3"><li>Compute the Covariance Matrix of the dataset</li></ol><ol id="5b22fcac-05cf-4bb3-ab64-9d428e052f08" class="numbered-list" start="4"><li>Sort the eigenvectors and eigenvalues by decreasing value</li></ol><ol id="3e43c9b0-3dec-4f77-8023-36d1c6e2d9e1" class="numbered-list" start="5"><li>Pick the first k number of eigenvectors</li></ol><ol id="a4b19fee-d7cd-4a68-b086-87443c27dc0b" class="numbered-list" start="6"><li>Use these eigenvectors to transform the samples onto the new subspace</li></ol><p id="c0f5135e-c6cc-4b70-ac93-00d5e13df5f8" class="">
+</p><h3 id="ef7110bd-c1ef-4bcd-a75b-281c6672a627" class="">Theory Behind PCA</h3><ol id="1a77a3a8-4c32-4102-b51d-304a40307c5a" class="numbered-list" start="1"><li>The Covariance matrix tells us the relationship between the variables.</li></ol><ol id="826a664f-35c8-4684-b95a-427ff6ce6c59" class="numbered-list" start="2"><li>Eigenvectors give us the direction of the data while the Eigenvalues represent the magnitude or importance. Bigger values indicate the more important directions.</li></ol><ol id="fd2d2248-b985-4dc6-855d-c51005f5f17e" class="numbered-list" start="3"><li>The higher the eigenvalue, the higher the variance which indicates higher importance that we want to detect.</li></ol><p id="3b6e58de-13cc-43f3-b900-d6606a020b19" class="">
+</p><h3 id="dcd4f371-5902-4cbe-9dd1-27812db3e4f4" class="">When to use PCA</h3><ol id="8136ebae-63c5-4ae7-8c1b-af466f204300" class="numbered-list" start="1"><li>Reduce the number of variables taken into consideration</li></ol><ol id="8ef74529-556f-4647-868a-b94763254b80" class="numbered-list" start="2"><li>To make variables independent of each other</li></ol><h3 id="cb04c16b-ef7d-4af3-8f06-22eeac0289a3" class="">Conclusion</h3><p id="82de98c2-e3f6-42fe-bdef-383e69968606" class="">I hope that you found this blog useful and that you gained some intuition behind the PCA algorithm. Now it is your turn to implement it!</p><p id="0934502d-ee94-4bd4-b0b0-bb4f9d4077c7" class="">
+</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

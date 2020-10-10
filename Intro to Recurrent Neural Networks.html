@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/rnnback.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Intro to Recurrent Neural Networks</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 17, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="cf3cf3e5-c43c-4ebe-9c86-611d4dbc3e41" class="page sans"><header><h1 class="page-title">Intro to Recurrent Neural Networks</h1></header><div class="page-body"><p id="1217dd50-5b02-481d-88f0-2533cbf3610f" class="">Recurrent Neural Networks or RNNs are especially powerful in handling sequential data. Sequential data can come in the form of audio or text and RNNs allow us to do many tasks in natural language processing such as trigger word detection which is simply how your Google Home or your Alexa detects when you&#x27;re talking to them.</p><p id="d74320f9-f2ca-4280-b9e8-e203189ad132" class="">
+</p><h3 id="af5e3dfd-a6ae-4f9b-b989-929aff32aedb" class="">Recurrent Neurons</h3><p id="f1729523-7009-44b9-988a-02267ea327d2" class="">Previously, we mostly looked at feedforward neural networks where the activations flow in one direction from an input layer to an output layer. A recurrent neural network adds an extra step which is outputting the previous layer&#x27;s answer as the input of the next layer&#x27;s. </p><p id="7d4661ac-029d-4b3e-a3f5-45518d40e5e4" class="">
+</p><figure id="8a811885-513a-4fd0-ae9a-56d813309ee5" class="image"><a href="Intro%20to%20Recurrent%20Neural%20Networks/Untitled.png"><img style="width:573px" src="Intro%20to%20Recurrent%20Neural%20Networks/Untitled.png"/></a><figcaption>Example of RNN</figcaption></figure><p id="04e94f92-da58-4427-866a-c0f83b271fb3" class="">Notice how the each layer receives the previous layer&#x27;s outputs.</p><p id="a0fe36f0-d523-47cc-9d83-37aadb92d1b3" class="">Each cell is able to remember the previous cell&#x27;s output which allows for sequential memory which allows the model to be accurate based on patterns that it has learned before.</p><p id="93cbd260-4571-4000-a5f8-841bc8bfe988" class="">
+</p><h3 id="9311036a-5ef1-460c-b154-da0a605952d8" class="">What can we do with this?</h3><ol id="4cf79acc-a68f-4239-a4b8-00e15faf2ca7" class="numbered-list" start="1"><li>Many to One Architecture: We could have the entire RNN run and the ignore all of its outputs except for the last one. This means our input sequence is many different words but our output is just one &quot;score.&quot; This is powerful in sentiment classification where we could have someone say &quot;The Food is amazing!&quot; and the classifier would output 1 for Good.</li></ol><ol id="34396c92-792c-4515-8a43-3b9247e0b15e" class="numbered-list" start="2"><li>Many to Many Architecture: An example of this where the input sequence length matches the output sequence length would be stock prices. For example, let&#x27;s say we have data over the last N days, and we want to output the prices shifted by one day into the future. This would then require each previous day to output one corresponding to the next day.</li></ol><ol id="8cd3e2ca-392e-42d0-9078-cb3b9854718e" class="numbered-list" start="3"><li>One to Many Architecture: An example of this is if we had an image and who want to caption it. We would then receive one input as the image vector and we would have to output a sequence as the output</li></ol><ol id="d2b22fc4-87af-46e3-94b1-ab0641423fe5" class="numbered-list" start="4"><li>Encoder-Decoder Architecture: This is great for language models where the input length might not match the output. We would then use an encoder network would convert the sequence from one language into a single vector representation. Then, the decoder network would output the representation into another language.</li></ol><p id="81f7df0c-fa4e-4b33-b683-d4178968d65a" class="">
+</p><h3 id="32e71430-49f9-4bec-af48-ebcfd93b4e33" class="">Training RNNs</h3><ul id="64d4e54b-2991-47b3-bed5-e5ec2056db86" class="bulleted-list"><li>In order to train an RNN, the trick is to do regular backpropagation known as <em>backpropagation through time</em></li></ul><ul id="64129be1-2032-4376-a2cd-93a9e5aaeaf6" class="bulleted-list"><li>We feed the output into a cost function which calculates how far off our model is from the actual answer</li></ul><ul id="8242d123-371d-4d76-b4ed-e484662f6004" class="bulleted-list"><li>We then update the parameters based on the gradients computed during backpropagation</li></ul><p id="19c30eea-12b8-411c-bc4a-208e906156fd" class="">
+</p><h3 id="5039de32-ff52-4f75-935e-ffc54b704749" class="">Conclusion</h3><p id="46b36cd2-5f2b-49d1-aad7-8bf366e4b8a5" class="">You now know how a Recurrent Neural Networks function, what you can do with it, as well as how to train it. Be prepared to learn how to code it next! </p><p id="d3930432-92a3-40f0-b294-d93aa8509b95" class="">
+</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

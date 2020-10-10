@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pyFunctions.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Functions</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on May 2, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="d048c8bd-7c05-4da6-ae4b-29770cbe416e" class="page sans"><header><h1 class="page-title">Functions</h1></header><div class="page-body"><p id="2442fb9c-2532-4561-a3d1-c4140ce2e6d0" class="">Table of Contents:</p><nav id="bbb6120b-6d7e-48c4-a65d-042a25072e23" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#86dbe2ec-c6a2-45f5-8cfc-4e12f97da735">Function Calls</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c563fb1d-729d-4b87-8e1e-e4890067ed0e">Type Conversion Functions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ba81c5d3-cc70-4b8f-8751-408a4e7366f4">Math Functions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d420ca9b-8854-4852-ae26-70f2bdb67ddc">Composition</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d6c17290-5986-4d92-9e91-9990ced794e7">Function Definition</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b9edecbc-e9e8-4934-b9f3-83f5bbf664d2">Scope of Variables </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#34d11369-0237-4c89-bc9e-2e00de25b092">Conclusions</a></div></nav><p></p><h3 id="86dbe2ec-c6a2-45f5-8cfc-4e12f97da735" class="">Function Calls</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0a9703dc-48ae-4bc9-9e16-1ea9dd116357"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">A function is a named sequence of statements that perform a computation</div></figure><p id="48a4c8bb-27b0-42ec-821e-c2aee9e4535e" class="">An example of a function call is </p><pre id="0f38f523-9b0c-4bbd-8156-6846415aaaf2" class="code"><code class = "lang-Python">&gt;&gt;&gt; type(16)
+&lt;type &#x27;int&#x27;&gt;</code></pre><p id="e17adb3e-8b0d-4dae-8484-f1126e892049" class="">The function name is <code class = "lang-Python">type</code></p><p id="272e4823-1eab-40c3-a1e2-15d6396c5ea7" class="">The expression in parentheses is the <code class = "lang-Python">argument</code></p><p id="2489b868-65c5-40d7-a5f6-b93742f9e9d0" class="">The result of the function is called the <code class = "lang-Python">return value</code></p><p id="eed55f9a-d402-4200-973c-4804f4aa98ea" class="">
+</p><h3 id="c563fb1d-729d-4b87-8e1e-e4890067ed0e" class="">Type Conversion Functions</h3><p id="8ce4e812-bb0c-4562-a729-1a0c3ff52c73" class="">Python has several built-in functions that convert values from one type to another.</p><p id="2b537e28-9154-4416-8ea7-b99627dbf6b5" class="">The <code class = "lang-Python">int</code> function takes any value and converts it to an integer.</p><p id="f20582a9-890e-4415-bb43-22a6fe0a4c15" class="">The <code class = "lang-Python">float</code> function converts integers and strings to floating-point numbers.</p><p id="1dcbd596-7d32-46a7-975a-2357543dbedd" class="">The <code class = "lang-Python">str</code> function converts its argument to a string</p><pre id="8b083138-5b34-4588-b31a-a082f86a41da" class="code"><code class = "lang-Python">&gt;&gt;&gt; int(&#x27;32&#x27;)
+32
+&gt;&gt;&gt; int(3.23412)
+3
+&gt;&gt;&gt; float(32)
+32.0
+&gt;&gt;&gt; str(3.123213)
+&#x27;3.123213&#x27;</code></pre><p id="c3012eea-049b-4bec-bf23-3f0118840ec6" class="">
+</p><h3 id="ba81c5d3-cc70-4b8f-8751-408a4e7366f4" class="">Math Functions</h3><p id="37182182-e15f-4f06-a4d6-9f6f33a84e86" class="">Python has several mathematical functions that can be accessed through the module math.</p><p id="9a54a54e-87e8-427f-94b0-6aefbc3af9db" class="">We first import it by stating</p><pre id="57757d38-d617-4d94-a3e0-72c6ea233ecb" class="code"><code class = "lang-Python">import math</code></pre><p id="b3bde7ed-1873-46da-b711-853aa6e79fb6" class="">To utilize the functions within math, we specify the name of the module and the name of the function separated by a dot. This is known as <strong>dot notation.</strong></p><pre id="5f9123ad-ab48-4842-9e68-f69bcd82a89c" class="code"><code class = "lang-Python"># Examples
+x = math.sin(123)
+y = math.cos(132)
+z = math.sqrt(123)</code></pre><p id="0aa519dd-e2f8-40fb-a02b-7d84f30b8539" class="">You can get some constants such as pi by using dot notation as well</p><pre id="44a76337-8111-4132-a5af-e77e46fc5405" class="code"><code class = "lang-Python">math.pi</code></pre><p id="3dbe0d15-ebd9-494e-875e-0e96a969c7d0" class="">
+</p><h3 id="d420ca9b-8854-4852-ae26-70f2bdb67ddc" class="">Composition</h3><p id="a8217c86-925b-4e32-b9ec-10eb9d1e5cfd" class="">We can put entire expressions and even other functions within functions.</p><p id="10dd14e5-8e2d-4ef6-b65d-91415a8f05cb" class="">This would look something like this</p><pre id="76ea9d56-014b-432e-8ed4-0860480e8ace" class="code"><code class = "lang-Python">x = math.sin(123 * 360 / 2465)  </code></pre><p id="0696bedb-fa04-4b42-a836-ec09e2aa2d08" class="">Notice the use of arithmetic operators yet it still works.</p><p id="6506afef-06c7-459d-8c71-05264761c6fa" class="">We can also put other functions:</p><pre id="8887700d-f9ec-43cf-9458-a85ae45126cd" class="code"><code class = "lang-Python">x = math.exp(math.log(x+1))</code></pre><p id="bcbdbfbe-4f65-486b-9122-b15ae07a38a1" class="">We utilize the log function within the exponential function and it works.</p><p id="d45e0630-1216-4c9e-8c4f-981b9db6db5d" class="">
+</p><h3 id="d6c17290-5986-4d92-9e91-9990ced794e7" class="">Function Definition</h3><p id="f842ec54-129d-4e3e-b991-b1025a0ac102" class="">Example:</p><pre id="984ba6e3-4387-452d-99db-780314c5e269" class="code"><code class = "lang-Python">def boy():
+	print(&quot;I am indeed a boy&quot;)</code></pre><p id="124fb040-1927-4f59-9bab-ba321b565020" class=""><code class = "lang-Python">def</code> is a keyword that indicates function definition. </p><p id="6577e5f1-cff6-4a88-bbb1-060abf98841b" class="">The name of the function is <code class = "lang-Python">boy</code></p><p id="e6026fca-2d72-4cb3-8129-ad9d6592db3a" class="">The empty parentheses indicates that this function doesn&#x27;t take any arguments.</p><p id="1c24195b-4189-4bfb-9784-67d87b2e4eb6" class="">The first line, known as the <strong>header</strong>, must end with a colon but the rest does not.</p><p id="8ae29999-7c1c-4bde-956c-04c0ce485616" class="">Functions are not used until they are called so if I wanted to call boy, I would have to write something like this:</p><pre id="f12c54ce-14cd-4234-9054-e15c61f9a63e" class="code"><code class = "lang-Python">&gt;&gt;&gt; boy()
+&#x27;I am indeed a boy&#x27;</code></pre><p id="b8152e64-e0a8-44a8-b84f-c684c3a98c40" class="">We could put functions in other functions, so let&#x27;s say I wanted to repeat the statement, then I could write something like</p><pre id="41316608-881a-4a55-9b00-21a7df08995c" class="code"><code class = "lang-python">def repeat_boy():
+	boy()
+	boy()
+	boy()</code></pre><p id="ea03ae7e-bf2c-4097-9960-b3ce2000c238" class="">When I call <code class = "lang-Python">repeat_boy</code> we get the statement from boy three times since we call boy three times within the function <code class = "lang-Python">repeat_boy</code> </p><p id="2998303c-4065-4321-aa4f-da6feb483ffd" class="">
+</p><h3 id="b9edecbc-e9e8-4934-b9f3-83f5bbf664d2" class="">Scope of Variables </h3><p id="746a3d4b-d7e8-4109-b9c8-72077b9c54a1" class="">The variables created within a function are <strong>local </strong>and do not exist outside the scope of the function.</p><p id="1044947a-705e-4db9-8f9d-f199257d818f" class="">With a function like</p><pre id="754fd2c5-c554-4890-8767-68ea8e31f5a2" class="code"><code class = "lang-Python">def hey_hey(line1, line2):
+	s = line1 + line2
+	print(s)</code></pre><p id="a524ff52-9bbd-4199-b8b1-5108e63efc1c" class="">The string s only exists within the function <code class = "lang-Python">hey_hey</code> and if we call it outside of this function, it does not exist. </p><p id="9a1c829d-2c13-4d87-9c69-02cc1f9c91e7" class="">
+</p><h3 id="34d11369-0237-4c89-bc9e-2e00de25b092" class="">Conclusions</h3><p id="f61c1b95-3bb8-4c94-be1c-c520e94e4d0f" class="">That&#x27;s the end of functions; I hope you enjoyed reading about it and can implement some cool functions of your own!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

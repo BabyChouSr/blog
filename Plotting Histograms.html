@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+   <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.66em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/histBack.PNG')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Plotting Histograms</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 26, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="a04ed701-a666-4ab7-9287-507542c486a8" class="page sans"><header><h1 class="page-title">Plotting Histograms</h1></header><div class="page-body"><p id="eb06f07b-4b77-4a72-949c-24bf36f3392d" class="">In this blog, I go over how to plot histograms using matplotlib which allows us to see how variables are distributed. This is incredibly important in statistics because it allows us to make inferences based on the distribution of the data.</p><p id="51a66cc2-e57e-4dea-888d-805d76564567" class="">I have also created a video on this topic:</p><figure id="5a329f5e-f473-45e0-b8e4-6f27a38079b4"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/STsZbHFCZjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Histogram Video</figcaption></div></figure><h3 id="c9b20ed1-f602-4e0b-bc18-dfdf04ff71c0" class="">Importing Libraries</h3><pre id="2056b7a9-14bc-4687-b3ff-33f50acac6c3" class="code"><code class = "lang-python">import matplotlib.pyplot as plt
+import numpy as np</code></pre><p id="9ecd0a2b-a844-4f14-8893-d79fa6b38a62" class="">We import our libraries that we need through these two lines</p><p id="2359c50e-99ab-4f85-897f-cc3b8e22c24d" class="">
+</p><h3 id="6e48430e-707b-4ef9-973d-9f7880a3029a" class="">Introduction to Histograms </h3><p id="08c72084-4190-4ccc-9864-942648f77c40" class="">We are going to start plotting histograms with just purely random data which is spawned by utilizing the random function from numpy.</p><p id="30c5a647-181d-40f2-9afb-62dba8de3cb8" class="">I am going to use the style of ggplot to make it look a little more stylish, but then again this is just dummy data.  </p><p id="1545b5d4-78e4-4484-9335-b226ae7b0019" class="">X is just a numpy array of size 1000 ranging from 0 to 10.</p><p id="22ec03ac-547b-48eb-86eb-84d51954504e" class="">I created the bins by using np.linspace which helps to create 100 partitions from 0 to 10. This would create an array that looks something like:
+</p><figure id="0904a309-6e53-46f3-8063-9d03a1d10e1d" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mfrac><mn>0</mn><mn>100</mn></mfrac><mo separator="true">,</mo><mfrac><mn>10</mn><mn>100</mn></mfrac><mo separator="true">,</mo><mfrac><mn>20</mn><mn>100</mn></mfrac><mo separator="true">,</mo><mfrac><mn>30</mn><mn>100</mn></mfrac><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mn>10</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[\frac{0}{100}, \frac{10}{100},\frac{20}{100},\frac{30}{100},.....10]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mopen">[</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">1</span><span class="mord">0</span><span class="mclose">]</span></span></span></span></span></div></figure><pre id="1a323c68-b4d9-4fa0-9659-0f837c417dcd" class="code"><code class = "lang-python">plt.style.use(&#x27;ggplot&#x27;)
+x = np.random.rand(1000) * 10
+bins = np.linspace(0,10,num = 100)
+plt.hist(x, bins = bins, edgecolor = &#x27;black&#x27;,color = &quot;#a8329e&quot;, label = &quot;hey dummy&quot;)
+plt.title(&quot;Dummy Data isn&#x27;t Smart&quot;)
+plt.xlabel(&quot;Ages of Dummy&quot;)
+plt.ylabel(&quot;Frequency of Dummy&quot;)
+plt.legend()</code></pre><figure id="f2a1ea74-0a63-4f2c-b533-48e72f1b7ef0" class="image"><a href="Plotting%20Histograms/Untitled.png"><img style="width:425px" src="Plotting%20Histograms/Untitled.png"/></a></figure><p id="cb15e004-2532-4625-9b5b-b5891574ddf1" class="">
+</p><h3 id="08fbd60e-8045-48cd-8a61-94b9a909d84f" class="">Plotting Normal Distribution</h3><p id="b49ff13c-65ef-4773-bbc5-0e1c4e2597a0" class="">A normal distribution is essential in statistics for any statistical test such as confidence intervals and hypothesis testing.</p><p id="471c150f-ff39-4879-bc58-b289b1af3a81" class="">xnorm is just the array of size 1000 with mean 0 and standard deviation 1. I put it at 0 and 1 because that&#x27;s the definition of a standardized normal distribution.</p><p id="d1b57f33-50ce-4ae1-8af7-6b21f35833fa" class="">I defined the bins from -3 to 3 because by the empirical rule which is (68,95,99.7), we would expect the entire distribution to be within -3 to 3.</p><p id="534f42eb-3f11-4466-b907-8ddb70582c8c" class="">From this, we get to see a cool looking normal distribution which we might be able to see if a certain test is applicable.</p><pre id="30073348-0635-4ba8-aee9-7a469623b21f" class="code"><code class = "lang-python">xnorm = np.random.normal(0, 1, 1000)
+bin_norm = np.linspace(-3,3,num=100)
+plt.hist(xnorm, bins = bin_norm, edgecolor = &#x27;black&#x27;,color = &quot;#42c8f5&quot;, label = &quot;hey dummy2&quot;)
+plt.title(&quot;Dummy Data isn&#x27;t Smart&quot;)
+plt.xlabel(&quot;Ages of Dummy&quot;)
+plt.ylabel(&quot;Frequency of Dummy&quot;)
+plt.legend()</code></pre><figure id="880c7b4f-75fa-457a-b95f-558a77146a2b" class="image"><a href="Plotting%20Histograms/Untitled%201.png"><img style="width:417px" src="Plotting%20Histograms/Untitled%201.png"/></a></figure><p id="2ec9616e-e76e-4dec-92c2-480c699d748f" class="">
+</p><h3 id="576640ce-39bf-4e0b-b5b3-dce3868570ad" class="">Plotting Vertical Lines</h3><p id="163495c4-50a6-4f20-a4f5-f21300d248fb" class="">What if we wanted to signify a certain feature? To do so, we would use a function called plt.axvline()</p><pre id="2902b06a-455e-4c3a-8f7f-5d8548c8e543" class="code"><code class = "lang-python">xnorm = np.random.normal(0, 1, 1000)
+bin_norm = np.linspace(-3,3,num=100)
+plt.hist(xnorm, bins = bin_norm, edgecolor = &#x27;black&#x27;,color = &quot;#45de73&quot;, label = &#x27;hey dummy3&#x27;)
+median = 0
+plt.axvline(median, color = &#x27;red&#x27;, label = &quot;Median&quot;)
+plt.title(&quot;Dummy Data isn&#x27;t Smart&quot;)
+plt.xlabel(&quot;Ages of Dummy&quot;)
+plt.ylabel(&quot;Frequency of Dummy&quot;)
+plt.legend()</code></pre><p id="30700573-dafa-4b9d-88b5-05bb065c7608" class="">This is the same function as before except we added a certain function called plt.axvline(). We can assume that the median and mean are at 0 by definition of a normal distribution. Anyways, the color is red and we are able to label it which will show up on the legend.</p><figure id="e06dfd2d-a9bb-4ad2-90ff-0338fc76266e" class="image"><a href="Plotting%20Histograms/Untitled%202.png"><img style="width:434px" src="Plotting%20Histograms/Untitled%202.png"/></a></figure><p id="ec22e182-3a69-4bef-9e0f-6ef548fec50c" class="">
+</p><h3 id="5ff857e7-2fd7-455a-be1b-c2ce0fd16606" class="">Conclusion</h3><p id="19dab387-99c3-4546-a74e-f8b4e5a0d8ac" class="">There we go! That&#x27;s really it with histograms. All we have to do is:<div class="indented"><ol id="d58b41a9-337c-4230-af46-d0804e352f58" class="numbered-list" start="1"><li>Find an x-array with frequency</li></ol><ol id="1a2535d4-71a0-4a53-9cff-60c502a97791" class="numbered-list" start="2"><li>Partition the plot into bins</li></ol><ol id="e895beba-7269-4c86-9da5-5701dff4e8e1" class="numbered-list" start="3"><li>The rest is just styles!</li></ol></div></p><p id="a8e77791-9faf-454b-b5cb-4cdcf74945df" class="">I hope you guys learned something from this blog and can apply it in your own code!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+
+</body>
+
+</html>

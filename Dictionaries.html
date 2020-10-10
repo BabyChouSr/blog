@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pyDict.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Dictionaries</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on May 31, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="b8500c2f-7c9c-499e-b444-e81b512d5a03" class="page sans"><header><h1 class="page-title">Dictionaries</h1></header><div class="page-body"><p id="9d22bc03-528c-43b3-a654-f23b55567246" class="">In this blog, I will be going over dictionaries which is another type of data structure. Dictionaries are extremely elegant in programming which is why Python is so powerful.</p><p id="882e3826-801f-4d78-b37d-9980ecf96016" class=""><strong>Table Of Contents:</strong></p><nav id="1dd4e434-e97a-4cf3-a8d2-65a7dbac144c" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a3bab821-f9cd-4ef1-8a97-352ddf637145">A Dictionary is a Mapping</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7601f1d9-7c76-41de-b8e7-83c06d6997e2">Traversing Dictionaries</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f07e7e6-9026-40fc-8edd-d9b2bd88470c">Reverse Lookup</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#631b8a0e-3fb7-4deb-9988-4398afb53689">Conclusion</a></div></nav><h3 id="a3bab821-f9cd-4ef1-8a97-352ddf637145" class="">A Dictionary is a Mapping</h3><p id="b20743ae-2501-42e9-b0f1-700561591a6c" class="">A <strong>dictionary </strong>is like a list, but it contains both <strong>keys </strong>and <strong>values. </strong>A dictionary is essentially a collection of indices that contain this <strong>key-value pair </strong>where each index also has a value associated with it.</p><p id="dbd16895-5501-4f14-b48a-ea674cf80aaa" class="">In math, this is known as a <strong>mapping </strong>from keys to values since each links or &quot;maps&quot; to a certain value.</p><p id="c78679f2-74f2-4860-878f-718d0e8be2a0" class="">Let&#x27;s create a dictionary that translates numbers to english.</p><p id="97b31131-b5e6-43eb-922c-497ec69be908" class="">We start with an empty dictionary that looks like this:</p><pre id="4c897327-c125-4923-97c5-8bd57bf56ede" class="code"><code class = "lang-python">numToEng = dict()</code></pre><p id="bade5f52-c1b7-4a71-a2cb-998b8f35e627" class="">Notice the squiggly-brackets.</p><p id="6814e9f9-70a3-457c-b31c-66808445b517" class="">We create a certain key to value mapping by doing</p><pre id="6b713747-4ef5-44f8-9b4e-4a5a60709151" class="code"><code class = "lang-python">numToEng[1] = &#x27;one&#x27;</code></pre><p id="a7e07f26-f31e-45c5-93d2-ad7084270d1b" class="">This creates a pair of <code class = "lang-python">{1 : &#x27;one&#x27;}</code></p><p id="f80f5990-ede0-419b-9b6b-636e7d933bf3" class="">We can do this for several keys and values:</p><pre id="3a5968bf-3536-4a45-9ed4-9178001b952a" class="code"><code class = "lang-python">numToEng[1] = &#x27;one&#x27;
+numToEng[2] = &#x27;two&#x27;
+numToEng[3] = &#x27;three&#x27;
+numToEng[4] = &#x27;four&#x27;</code></pre><p id="02c0477b-6209-4105-ac38-bbf4233b9abf" class="">Our dictionary would then look like:</p><p id="0d6f684d-f4b1-41a9-ba0a-c168e4223b50" class=""><code class = "lang-python">{1 : &#x27;one&#x27;, 2: &#x27;two&#x27;, 3 : &#x27;three&#x27;, 4: &#x27;four&#x27;}</code></p><p id="b9cdd8e8-c172-4319-af57-1fb1c8f2ada8" class="">We access any value by using the index which in this case is the <em>key.</em></p><pre id="135a01b8-8bcb-4d07-9179-37b0cbb94a19" class="code"><code class = "lang-python">numToEng[1] = &#x27;one&#x27;</code></pre><p id="f06c351e-71da-4234-8203-88e07b1908ac" class=""><code class = "lang-python">1</code> is the key and <code class = "lang-python">&#x27;one&#x27;</code> is the value</p><p id="7651aeaf-d609-43d3-8785-e5c11124730d" class="">
+</p><h3 id="7601f1d9-7c76-41de-b8e7-83c06d6997e2" class="">Traversing Dictionaries</h3><p id="81c543eb-88b9-4318-b3a1-d69e5ead7c3e" class="">If you use a dictionary in a <code class = "lang-python">for</code> statement, it traverses the keys of the dictionary:</p><pre id="350b4c98-7c2e-4877-ad90-5e3fdd18daba" class="code"><code class = "lang-python">numToEng = {1 : &#x27;one&#x27;, 2: &#x27;two&#x27;, 3 : &#x27;three&#x27;, 4: &#x27;four&#x27;}
+for i in numToEng:
+	print(numToEng[i])
+&gt;&gt;&gt; one
+&gt;&gt;&gt; two
+&gt;&gt;&gt; three
+&gt;&gt;&gt; four</code></pre><p id="dc5a7585-2b80-4dfb-ac91-9d39965e2b66" class=""><code class = "lang-python">i</code> represents each key within numToEng which we traverse to access each value. </p><p id="2ab78371-aa0f-4c7e-8fc7-adc35eb54255" class="">
+</p><h3 id="0f07e7e6-9026-40fc-8edd-d9b2bd88470c" class="">Reverse Lookup</h3><p id="a526c166-0450-42c8-aef6-dc83ea0cf16e" class="">It is very easy to find for some key k a certain value v since we just have to use a for loop until we find the key that corresponds to <em>k.</em></p><p id="c807ce08-757a-4b35-9c25-5a64b4dab6c5" class="">However, let&#x27;s say we wanted to use the value <em>v </em>to find the corresponding value k. We would have to do something called reverse lookup.</p><p id="6f04713d-5682-4427-bda5-bc6d9c7e07d6" class="">For example, let&#x27;s say we want to look up for the number that corresponds to &#x27;four&#x27;</p><pre id="4a9b61f3-7003-4b65-ad77-b9ce4b0910c3" class="code"><code class = "lang-python">numToEng = {1 : &#x27;one&#x27;, 2: &#x27;two&#x27;, 3 : &#x27;three&#x27;, 4: &#x27;four&#x27;}
+def reverse_lookup(dict, value):
+	for i in dict:
+		if dict[i] == value:
+			return i
+	return None
+print(reverse_lookup(numToEng, &#x27;four&#x27;))
+&gt;&gt;&gt; 4
+</code></pre><p id="00ae9495-efc5-42f4-b276-278cb65f8906" class="">Running this code, we can insert a certain value v and would be able to find the key that corresponds to that value. </p><p id="accbeeca-67b3-422a-8275-535dc075fcad" class="">
+</p><h3 id="631b8a0e-3fb7-4deb-9988-4398afb53689" class="">Conclusion</h3><p id="470422d4-d363-4f20-9974-a5941a569e45" class="">These are the basics with using a dictionary; I hope you guys enjoyed this blog and are able to apply dictionaries in your own programs!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

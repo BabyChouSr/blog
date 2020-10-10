@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href = "css/prism.css" rel = "stylesheet">
+   <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+       .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://d1m75rqqgidzqn.cloudfront.net/wp-data/2020/01/17162345/clustering-algorithms-in-Machine-Learning.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>K-Means Clustering</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">Posted by
+              Christopher Chou
+              on March 22, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="d98f4216-17b7-4db2-b884-687e491ccfe4" class="page sans"><header><h1 class="page-title"></h1></header><div class="page-body"><h3 id="c28662c4-fb3e-4532-a604-885a21283b26" class="">By: Christopher Chou, President of WHS Data Science</h3><p id="1cc2ec97-4695-46df-ad6f-dfeb22f43018" class="">Before I continue to lecture about practical clustering, I must define how the algorithm works and what we are looking for. If you haven’t read my document on the differences between classification and clustering, please do read it. We will be going over K-Means Clustering in this tutorial. In mathematical terms, K-Means Clustering is the algorithm to find the centroid (center) of a cluster of data points and to find which data points are within that cluster, basically finding members in a certain group.</p><p id="1b844fc8-bcee-47c7-a068-6d1289ec9f30" class="">For an example, we see that the red, green, and blue data points are all different clusters with distinct identities. The job of the program is then to find what factors make that group distinct, for example, the petal width or the sepal length. Again, this is not classification because we are not separating the species by class, but instead Euclidean distance which is why many categorical variables (non-numerical) have to be transformed into numerical variables so that we can calculate the distance. Therefore, we are not using pre-existing knowledge of the data to put certain data points into a class, we are just finding the relationship (distance) between objects.</p><figure id="eaa50df3-9bf4-4b17-8e74-61b266cee517" class="image"><a href="Practical%20Clustering/kmeans.png"><img style="width:450px" src="Practical%20Clustering/kmeans.png"/></a></figure><p id="da68d9fe-49b0-4117-afbb-21daa68f2a8e" class="">For now, we will work with numerical data. In the future, I will cover the dummies function in pandas which will allow us to transform categorical data to numerical data. For simplicity, let’s work with the iris dataset: https://archive.ics.uci.edu/ml/datasets/Iris</p><p id="90cf016c-3822-4e84-af25-8d4d22ff8c4c" class="">We first import the libraries that we are going to be using and then process the iris library. For this lab, I’m going to look at the sepal length/width and the petal width/length which is the first four columns and then the fifth column which is the actual class that the flowers are in.</p><pre id="20d0995a-9b94-4195-bd3a-7e5b082dee97" class="code"><code class = "lang-python">from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.metrics import homogeneity_score
+
+df = pd.read_csv(&#x27;iris.csv&#x27;)
+print(df.head())
+x = df.iloc[:,:4].values # first four columns, we are comparing sepal length
+y = df.iloc[:,4].values # fifth column</code></pre><p id="5c277f84-6f61-4397-a7b7-2717015507bd" class="">Since we are doing K-Means Clustering, we have to find the optimal # of clusters. This will be done by doing something called the “elbow method.” We basically find where the “elbow” is which is where the graph dips down and no longer has a large difference between each iteration. We are measuring this by looking at the WCSS which is basically the distances from the centroid to the cluster.</p><pre id="e12de63e-227f-4b0e-96ec-499bf5b06f14" class="code"><code class = "lang-python">#Optimizing the Number of Clusters
+wcss = [] #Within Cluster Sum of Squares
+for i in range(1,11):
+    kmeans = KMeans(n_clusters=i, init=&#x27;k-means++&#x27;, random_state=0)
+    kmeans.fit(x)
+    wcss.append(kmeans.inertia_) #WCSS, the distance
+plt.plot(range(1,11),wcss)
+plt.xlabel(&#x27;#Number of Clusters&#x27;)
+plt.title(&#x27;The Elbow Method&#x27;)
+plt.ylabel(&#x27;WCSS&#x27;)
+plt.show()</code></pre><figure id="b899b9e7-6ba9-4c30-b42e-43fa4f7a1864" class="image"><a href="Practical%20Clustering/image-20200216093550849.png"><img style="width:586px" src="Practical%20Clustering/image-20200216093550849.png"/></a></figure><p id="c886a306-d22b-4b37-a82d-5a4bd2431dad" class="">From this graph, we can see that the optimal number of clusters is three.</p><p id="ad3c540f-7007-440d-ace2-15c070be1a47" class="">Now that we know the optimal number of clusters, we will be using the K-means algorithm.</p><pre id="23002740-9466-44be-a487-718337481daf" class="code"><code class = "lang-python">#Applying kmeans to the dataset / Creating the kmeans classifier
+kmeans = KMeans(n_clusters = 3, init = &#x27;k-means++&#x27;, max_iter = 300, n_init = 10, random_state = 0)
+y_kmeans = kmeans.fit_predict(x)
+print(y_kmeans)</code></pre><figure id="e2383aa9-3bba-44e4-b796-0f71bfa2b42d" class="image"><a href="Practical%20Clustering/image-20200216094448680.png"><img style="width:536px" src="Practical%20Clustering/image-20200216094448680.png"/></a></figure><p id="93b85100-4a09-4f3f-a864-2b5d0ab8c6a4" class="">We end up with an array of all the different flowers into groups of 0,1,2 which corresponds with the type of flower they are.</p><pre id="3594c04b-5219-4793-97fe-cfb0b64be5e2" class="code"><code class = "lang-python">#Visualising the clusters
+plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 1], s = 100, c = &#x27;red&#x27;, label = &#x27;Iris-setosa&#x27;)
+plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 1], s = 100, c = &#x27;blue&#x27;, label = &#x27;Iris-versicolour&#x27;)
+plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 1], s = 100, c = &#x27;green&#x27;, label = &#x27;Iris-virginica&#x27;)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:,1], s = 100, c = &#x27;yellow&#x27;, label = &#x27;Centroids&#x27;)
+plt.xlabel(&#x27;Sepal Length&#x27;)
+plt.ylabel(&#x27;Sepal Width&#x27;)
+plt.legend()
+plt.show()</code></pre><p id="47a1a654-1afc-4e25-84f7-6febc0c8148e" class="">Here is the code for the visualization of this.</p><figure id="e5da5755-fdc7-4fe9-a2e6-b09b79a094cd" class="image"><a href="Practical%20Clustering/image-20200216100420683.png"><img style="width:591px" src="Practical%20Clustering/image-20200216100420683.png"/></a></figure><p id="55950be5-3b94-4e9c-8fd3-148ab6dc6cc3" class="">Here, we can see that all the clusters have been formed, although not perfect. The program did a pretty good job at finding which clusters were part of what group.</p><p id="90976ae8-ca2f-4a94-82c1-16668b5ab535" class="">To measure the accuracy, I decided to use the homogeneity score which basically sees how much of each group is actually part of the correct group.</p><pre id="0065dab5-154c-4c75-b168-82169bfba11d" class="code"><code class = "lang-python">print(&quot;Homogeneity: %0.3f&quot; % homogeneity_score(y, y_kmeans))</code></pre><p id="4f17f647-39d3-4693-acc6-f3760bdf8f0e" class="">With this, I ended up getting a Homogeneity score of 0.750 which isn’t too bad.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+</body>
+
+</html>

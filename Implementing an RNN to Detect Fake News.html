@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet"> 
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.66em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/fakeNewsBack.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Implementing an RNN to Detect Fake News</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 24, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="0c2754bf-011a-4352-ba83-83a68bd581a3" class="page sans"><header><h1 class="page-title">Implementing an RNN to Detect Fake News</h1></header><div class="page-body"><p id="ea7c0447-82c2-459f-919c-3c7109387293" class="">In this blog, I will go over a real-world example in which I implemented a Recurrent Neural Network to detect Fake News.</p><p id="7cb1c14b-8e1e-492b-b2da-01b02ff52f14" class="">In order to detect Fake News, we have to create some way in which we can analyze words and what those words means. This is perfect for sequence models.</p><p id="283dc9ff-a8b1-47aa-83d7-92b1e8d85450" class="">I made a video on this topic if you guys would like to consume the information in a visual/audio format: </p><figure id="e73e3bac-19c6-4dca-bb94-1be25a091f47"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/8T3Zyqk1a2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Recurrent Neural Networks Video</figcaption></div></figure><h3 id="9a8ae0f0-7c51-448a-9471-9dfd51ee64bc" class="">Importing Libraries</h3><pre id="4c67058f-3275-4b73-9b88-67e293b982a5" class="code"><code class = "lang-python">import numpy as np
+import pandas as pd
+import keras
+import tensorflow as tf
+from keras.layers import Dense
+from keras.models import Sequential
+import matplotlib.pyplot as plt
+
+from keras.models import Model
+from keras.layers import Dense, Input, Dropout, LSTM, Activation
+from keras.layers.embeddings import Embedding
+from keras.preprocessing import sequence
+from keras.initializers import glorot_uniform
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.callbacks import Callback
+%matplotlib inline</code></pre><p id="e023e01a-103e-46b9-afe5-c2ae332a84ca" class="">Don&#x27;t be scared because of the number of libraries. I will explain the libraries in the function section so that you will understand how each will be used.</p><p id="0a5d3c3f-338c-436e-9643-e197557b139c" class="">
+</p><h3 id="515433f3-b8af-470f-9b67-2f65118556f2" class="">Reading the Dataset</h3><p id="a7223150-bef9-4000-91ab-995f5136bd06" class="">I got the dataset from </p><figure id="cc671054-6060-4f45-a766-3b4419275bd3"><a href="https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fake and real news dataset</div><div class="bookmark-description">Classifying the news</div></div><div class="bookmark-href"><img src="https://www.kaggle.com/static/images/favicon.ico" class="icon bookmark-icon"/>https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset</div></div><img src="https://storage.googleapis.com/kaggle-datasets-images/572515/1037534/0ff0a3586a51ef5f59bde5bd754dbb72/dataset-card.jpg?t=2020-03-26-19-01-44" class="bookmark-image"/></a></figure><p id="e7c9fb04-6621-4bf0-a553-a25bab427a69" class="">The problem was that they had two different datasets, one with real news and the other one with fake. Basically, to train over the entire thing, we have to concatenate the two and label it.</p><pre id="16b43a7d-3a4d-4c12-bad3-f41859e6513c" class="code"><code class = "lang-python">df_true = pd.read_csv(&quot;True.csv&quot;)
+df_fake = pd.read_csv(&quot;Fake.csv&quot;)
+df_true[&#x27;category&#x27;] = 1
+df_fake[&#x27;category&#x27;] = 0
+df = pd.concat([df_true,df_fake])</code></pre><p id="472d1488-de7d-4fa7-976b-858bc89b3d7f" class="">
+</p><h3 id="66db6888-9e68-400b-89a9-ad335f6d49df" class="">Hyperparameters</h3><pre id="c5791b72-4b2e-4b6a-a2d2-e345a492434b" class="code"><code class = "lang-python">#Initializing the Hyperparameters
+vocab_size = 100000
+embedding_dim_title = 128
+max_length_title = 40
+embedding_dim_text = 500
+max_length_text = 500
+trunc_type = &#x27;post&#x27;
+padding_type = &#x27;post&#x27;
+test_ratio = .2
+embedding_dim = 500</code></pre><p id="2309739d-1f55-41d9-ac30-6d066126626b" class="">Here are the hyperparameters that we will be dealing with. I like to have a hyperparameters section by itself so we know how to tune each of the hyperparameters to see how to improve accuracy.</p><p id="88c817b1-9f5b-4426-8464-33f54573dd6b" class="">
+</p><h3 id="7132f42a-7660-4ab0-b0b4-a3378686baf7" class="">Tokenizing (Mapping Words to Vectors)</h3><pre id="c8f25e30-0187-4993-970a-820ba24a0873" class="code"><code class = "lang-python">df[&#x27;text&#x27;] = df[&#x27;title&#x27;] + df[&#x27;text&#x27;] + df[&#x27;subject&#x27;]
+X_train,X_test,y_train,y_test = train_test_split(df.text,df.category, test_size = 0.20)
+
+t = Tokenizer(num_words = vocab_size)
+t.fit_on_texts(X_train)
+train_sequences = t.texts_to_sequences(X_train)
+train_padded = pad_sequences(train_sequences, maxlen=max_length_title,
+                                padding=padding_type,
+                                truncating=trunc_type)
+t.fit_on_texts(X_test)
+test_sequences = t.texts_to_sequences(X_test)
+test_padded = pad_sequences(test_sequences, maxlen=max_length_title,
+                                padding=padding_type,
+                                truncating=trunc_type)
+
+train_padded = np.array(train_padded)
+y_train = np.array(y_train)</code></pre><p id="4ce6f7fe-6c6b-4ea1-ab12-aa569fb04777" class="">Here are a couple of the functions that we have to touch upon.</p><ul id="f6652c60-c6f5-4f2a-ae89-a76adf0e52a4" class="bulleted-list"><li>Tokenizer: It takes in a vocab size which is the number of unique words that it will learn from. In this case, it would be 100000. </li></ul><ul id="853b3691-32c8-40ff-bc7d-3729e2344271" class="bulleted-list"><li>fit_on_texts(): This fits the tokenizer onto the texts</li></ul><ul id="048a1033-c960-4abc-aded-20996bc21755" class="bulleted-list"><li>texts_to_sequences: We convert the words into vectors which will make it easier to do deep learning on because we can quantify the words. </li></ul><ul id="5584437a-9dd6-4f0f-8ad5-80822735bfe0" class="bulleted-list"><li>pad_sequences: Because our sequences won&#x27;t all be the same length, we have to add some zeroes at the end so that all the sequences are of the same length. This allows us to train it through our model.</li></ul><ul id="7ac30493-0b35-4754-aed1-8737c52dba6c" class="bulleted-list"><li>We also need to convert all our training arrays into numpy arrays.</li></ul><p id="e20020a7-c87b-403b-96ac-07ddde477df5" class="">
+</p><h3 id="19eda0f8-a4cc-42d3-bcff-a88f8c0aa7a8" class="">Callback Function</h3><pre id="564f1da5-4fcf-438a-a051-99734c0cebbf" class="code"><code class = "lang-python">class AccuracyHistory(keras.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.acc = []
+
+    def on_epoch_end(self, batch, logs={}):
+        if logs.get(&#x27;acc&#x27;) &gt; 0.95:
+                print(f&#x27;Accuracy reached {logs.get(&quot;acc&quot;)*100:0.2f}. Stopping the training&#x27;)
+                self.model.stop_training = True
+
+history = AccuracyHistory()</code></pre><p id="3ea3e618-36b5-4d4d-99be-74bcd1cc9b0e" class="">Before I run the program, I set my custom callback function that allows us to stop the function once we reach a certain accuracy. In this case, I set it at 95%.</p><p id="eaeefabc-5beb-48f8-b184-9cc5b38e2bd5" class="">
+</p><h3 id="c2bd58b7-aea4-4f0b-a809-8609b2707a09" class="">Model Creation</h3><pre id="f622a317-469c-4bf2-ac3d-6af681a5e79e" class="code"><code class = "lang-python">model = tf.keras.Sequential()
+model.add(tf.keras.layers.Embedding(vocab_size, embedding_dim))
+model.add(tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(embedding_dim)))
+model.add(tf.keras.layers.Dense(embedding_dim, activation=&#x27;relu&#x27;))
+model.add(tf.keras.layers.Dense(1, activation=&#x27;sigmoid&#x27;))
+model.compile(loss=&#x27;binary_crossentropy&#x27;, optimizer=&#x27;adam&#x27;, metrics=[&#x27;acc&#x27;])</code></pre><p id="65a01caf-8fbd-4da0-a56b-4d663b7e5b14" class="">My model looks something like this:</p><ul id="5564418b-6d86-4b32-875a-0ca19961ba06" class="bulleted-list"><li>Sequential just means the model will be in a linear format</li></ul><ul id="27b4c9ec-034a-435f-818b-698282176dfa" class="bulleted-list"><li>Embedding allows us to transform our vectors from a high dimension to a lower dimension to save computational speed. Think about this as the word embedding version of <a href="http://cswithchris.com/Principal%20Component%20Analysis.html">Principal Component Analysis</a></li></ul><ul id="7068a8e8-675f-4c4d-9f6b-818283278450" class="bulleted-list"><li>Bidirectional/LSTM: Allows our model to process phrases from both left to right and also right to left to gain full context. LSTM tells us which words are important and which are not. This helps to solve the problem where the sentences get really long and we forget information.</li></ul><ul id="ba0aca30-6cef-49ae-94d8-5429f362a486" class="bulleted-list"><li>Dense layers are essentially feed-forward neural networks that have weights and biases.</li></ul><ul id="2100e8c7-4bdd-4b99-8bb4-e374b7a69221" class="bulleted-list"><li>We compile with the adam optimizer and loss as binary crossentropy because those are just the standard ones. Adam requires more mathematical detail that I will go over in a future blog but it basically uses momentum and RMSProp. Binary crossentropy helps with classifying over just 1 class.</li></ul><p id="2cf5df6c-291c-466f-932f-0fb15d33a87d" class="">
+</p><h3 id="3044a9b5-0386-4599-8759-7d3dea461456" class="">Fitting the Model</h3><pre id="5301fbbd-5e59-4866-a4ca-7d7144ee4896" class="code"><code class = "lang-python">model.fit(train_padded , y_train, epochs=5,batch_size=32, callbacks=[history])</code></pre><p id="4202f418-4631-4045-9454-6c48b127bfe6" class="">We fit the model and basically begin training.</p><pre id="8583212e-a6e8-45bf-9153-6112ca240e56" class="code"><code class = "lang-python">Train on 35918 samples
+Epoch 1/5
+35918/35918 [==============================] - 1885s 52ms/sample - loss: 0.1336 - acc: 0.9497
+Epoch 2/5
+35904/35918 [============================&gt;.] - ETA: 0s - loss: 0.0336 - acc: 0.9892Accuracy reached 98.92. Stopping the training
+35918/35918 [==============================] - 1849s 51ms/sample - loss: 0.0336 - acc: 0.9892</code></pre><p id="d2153270-fa7e-4e5a-a9a1-32cce39872fc" class="">My results look something like this. We ended with an accuracy of 98.92% which is pretty good!</p><p id="0bd6acb4-fba1-4e5f-b7b9-daae8f5d1dc4" class="">
+</p><h3 id="99027a4a-7bf8-47b6-8dfa-715c20fb59ad" class="">Testing the Model</h3><p id="f75d7774-3fe6-4e1c-8fb8-2af353a0e67d" class="">I got an article from Politifact: <a href="https://www.politifact.com/factchecks/2020/apr/20/andrew-cuomo/cuomo-accurately-says-other-countries-reopened-saw/">https://www.politifact.com/factchecks/2020/apr/20/andrew-cuomo/cuomo-accurately-says-other-countries-reopened-saw/</a></p><p id="4826d496-4256-432f-8616-4535b28fb000" class="">which we knew was false already. I just put it in our model to see which it would say it was.</p><pre id="861e8a9a-01d8-4125-bf99-fb14ea642819" class="code"><code class = "lang-python">fakeee = [&quot;Conspiracies about mainstream news media are flourishing amid the government response to the COVID-19 pandemic. What a bunch of BS, screamed a Facebook post about a news photo from a Wisconsin rally against stay-at-home orders. Sharing two images from the demonstration, the post essentially claims the Milwaukee Journal Sentinel doctored a photo to put a Confederate Battle Flag in the hands of one protester. But the Milwaukee Journal Sentinel did not alter its photo.   The post was flagged as part of Facebook’s efforts to combat false news and misinformation on its News Feed. (Read more about our partnership with Facebook.) Here’s what happened. The Journal Sentinel, which publishes PolitiFact Wisconsin, posted a news story about the April 18 rally in Brookfield, a Milwaukee suburb. Nearly 1,000 people packed the sidewalk adjacent to a busy thoroughfare, most shoulder to shoulder, to protest Gov. Tony Evers’ decision to extend Wisconsin’s safer-at-home order until May 26. The Facebook post shows two photographs from the rally side by side — one from the Journal Sentinel and one said to be taken by the poster’s daughter.  The Journal Sentinel photo shows a man wearing a plaid shirt and jeans among a group of people and holding two flags — a Confederate flag and just above it, a yellow flag that is harder to make out.  The other photo with the post shows a man, also in a plaid shirt and jeans, who is not so close to other people. He is clearly holding only a yellow flag. The implication is that in its photo, the Journal Sentinel added the Confederate flag into the man’s hands.&quot;]
+t = Tokenizer(num_words =vocab_size)
+t.fit_on_texts(fakeee)
+fake_sequence = t.texts_to_sequences(fakeee)
+fake_padded = pad_sequences(fake_sequence, maxlen= 40,
+                                padding= &#x27;post&#x27;,
+                                truncating= &#x27;post&#x27;)
+
+pred = model.predict(fake_padded)
+if pred &gt;= 0.5:
+    print(&quot;True with a Confidence of: &quot;, (pred[0][0]) * 100, &quot;%&quot;)
+else:
+    print(&quot;False with a Confidence of: &quot;, (1-pred[0][0]) * 100, &quot;%&quot;)</code></pre><p id="52ff33cf-f249-4630-86d9-d86225cfd561" class="">The output was</p><pre id="3e2a51b8-a4ed-4d9f-b89a-e0ff86a1aa8f" class="code"><code class = "lang-python">False with a Confidence of:  99.77364437654614 %</code></pre><p id="8bf1a2b1-08b3-4d4e-976f-2f514f36ee00" class="">which was outstandingly correct.</p><p id="10018a77-e14e-4e12-8e46-3cac8d57a811" class="">
+</p><p id="64cc790b-06be-45c3-8936-5576b7462061" class="">
+</p><h3 id="49306fc2-6ab3-4004-aec5-8500f511df5b" class="">Conclusion</h3><p id="59ffd804-75d2-4208-b09b-5f778584dc8d" class="">I hope that you were able to learn how to implement RNNs in this blog. Watching the video will help immensely in your understanding as I go over some drawings that I hope will improve your intuition about RNNs. Now, it is your time to get out there and implement your own!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+
+</body>
+
+</html>

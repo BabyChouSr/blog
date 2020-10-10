@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pyFunctions.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Functions</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on May 2, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="6db45ee3-0c09-4285-881b-07503037bf32" class="page sans"><header><h1 class="page-title">Plotly Maps</h1></header><div class="page-body"><p id="18066968-bf40-4c75-9f1e-70d0987bb6f3" class="">I am going to go over how to create an interactive map about Covid 19 Spread Rates across the world using a library called Plotly. </p><h3 id="0f2df1e7-7fc5-46f5-b35d-78e6e4f1e374" class="">Installing and Importing Libraries</h3><pre id="a0e83649-1f10-45ad-8394-059a92b396d8" class="code"><code class = "lang-python">pip install plotly
+pip install pycountry
+pip install pandas</code></pre><p id="655c71e0-1a2d-47c5-a122-e1311f36667b" class="">Make sure to have the following libraries downloaded.</p><p id="2e36c8e9-90a7-4c2a-8811-b0d342a3c9b1" class="">The first step is always to import the libraries necessary:</p><pre id="ee9b3c64-ec7c-4c77-9d29-1403a3ff3f04" class="code"><code class = "lang-python">import pandas as pd # for the dataset
+import pycountry # For ISO code to identify country
+import plotly.express as px # For the data visualization</code></pre><p id="d5d4080d-371e-41e2-9164-2c214cf41e07" class="">We are going to read the data from a csv file that gives the number of people that have coronavirus on a daily basis</p><h3 id="779feafa-b0a7-4dbe-889d-247eba4887d5" class="">Reading in the Data</h3><pre id="59093738-6e52-4663-b1e8-9dea039f4c1b" class="code"><code class = "lang-python">url = &#x27;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv&#x27; 
+df = pd.read_csv(url)
+df.columns = df.columns.astype(str) </code></pre><p id="f9378ec5-b532-4c28-8106-64987b3bdb57" class=""><code class = "lang-python">url</code> is the link to the dataset that we are reading in. <code class = "lang-python">df</code> is the dataframe after reading in the csv file. We change <code class = "lang-python">df.columns</code> from an object type to string type in order to be able to identify the name of the columns afterwards.</p><pre id="5d70e0d5-e222-43cb-9338-6e20375cc744" class="code"><code class = "lang-python">df = df.drop([&#x27;Lat&#x27;,&#x27;Long&#x27;,&#x27;Province/State&#x27;], axis = 1)
+df= df.groupby(&#x27;Country/Region&#x27;).agg(&#x27;sum&#x27;)</code></pre><p id="b420c5e4-faea-4249-8b6b-45b04db5508d" class="">We then clean the data by calling <code class = "lang-python">df.drop</code> which drops the columns we don&#x27;t need such as Lat, Long, Province/State out of the dataframe. We then group the values in the Country/Region by the sum. This just means that if we have multiple occurrences of one value, we just sum it up into one.</p><h3 id="b42af0c4-74d7-454a-86a2-dac37574cfb2" class="">Preparing the Data</h3><pre id="58349c44-ea5a-4b70-9323-cebb061116f8" class="code"><code class = "lang-python">date_list = list(df.columns)
+def get_country_code(name):
+    try:
+        return pycountry.countries.lookup(name).alpha_3
+    except:
+        return None
+df[&#x27;country&#x27;] = df.index
+df[&#x27;iso_alpha_3&#x27;] = df[&#x27;country&#x27;].apply(get_country_code)
+df_long = pd.melt(df, id_vars=[&#x27;country&#x27;,&#x27;iso_alpha_3&#x27;], value_vars=date_list, var_name = &quot;Date&quot;, value_name = &quot;Number&quot;)</code></pre><p id="4367cb42-63fe-4900-a1f9-6bd8539015a7" class="">We then create a <code class = "lang-python">date_list</code> which starts from 1/22/2020 to the present which will serve as the x-axis of the data. Think about, we are techinically plotting a graph of <code class = "lang-python">number of people with Covid 19</code> vs. <code class = "lang-python">date</code> graph which makes the date on the x-axis.</p><p id="b2b3636e-8a32-4cbb-837c-e03d73e32f5f" class="">We then create a function called <code class = "lang-python">get_country_code</code> which takes in the name of each country such as &quot;Afghanistan, United States&quot; or whatever it is and returns the ISO alpha 3 value which will then let us plot it on the map.</p><p id="996db839-c629-4d4c-b5ba-d7d2c4801a78" class=""><code class = "lang-python">df[&#x27;iso_alpha_3&#x27;] = df[&#x27;country&#x27;].apply(get_country_code)</code> allows us to create a new column called &quot;iso_alpha_3&quot; and have each value be equaled to the corresponding iso alpha 3 value of each country.</p><p id="45648f01-ac1d-4435-84f7-af5717abde46" class=""><code class = "lang-python">df_long = pd.melt(df, id_vars=[&#x27;country&#x27;,&#x27;iso_alpha_3&#x27;], value_vars=date_list, var_name = &quot;Date&quot;, value_name = &quot;Number&quot;)</code> is a line that might be harder to understand. Think about it like this, we are going to find for each country the corresponding number of deaths at a certain date. <code class = "lang-python">value_vars</code> is just a new column using <code class = "lang-python">date_list</code> which is the date starting from 1/22/2020 to the present and then we find the corresponding values from the original dataset. </p><p id="e933d2b5-d525-4326-99aa-98468020e0bf" class="">
+</p><h3 id="05b68a89-00f0-4446-b79e-7014eb6161d4" class="">Plotting the Data</h3><pre id="e8a9b240-8051-4b8d-ae39-5eec5e04243f" class="code"><code class = "lang-python">fig = px.choropleth(df_long,                           
+                     locations=&quot;iso_alpha_3&quot;,           
+                     color=&quot;Number&quot;,                     
+                     hover_name=&quot;country&quot;,              
+                     animation_frame=&quot;Date&quot;,        
+                     projection=&quot;natural earth&quot;,        
+                     color_continuous_scale = &#x27;Peach&#x27;, 
+                     range_color=[0,200000],
+                     title = &quot;Covid 19 Spread in 2020&quot;
+                     )        
+fig.show()          </code></pre><p id="08bce431-11c7-4dcb-98d9-68c3809392e1" class="">With this line of code, we will be able to create our map on Python. We take in a dataframe and the locations correspond to the column <code class = "lang-python">iso_alpha_3</code> , the color corresponds to the <code class = "lang-python">Number</code> column (depends on how high the number or strength), when we hover over it the <code class = "lang-python">country</code> name pops up, the animation frame is based on the <code class = "lang-python">date</code> , the background is natural earth, and we use a peach color scale. With this, we will be able to get a map that looks like this.</p><figure id="5ff6da50-d3d8-404d-8957-8ca24caa7fd8" class="image"><a href="Plotly%20Maps/newplot.png"><img style="width:576px" src="Plotly%20Maps/newplot.png"/></a></figure><h3 id="a698b6fe-649e-429d-a078-4e175e7b6af0" class="">Conclusion</h3><p id="772d7e9b-8dff-4df2-88dd-a65582f4c723" class="">I hope that you guys were able to learn something from this blog and will be able to try for yourselves!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

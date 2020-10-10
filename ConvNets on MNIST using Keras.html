@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+         .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+         .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+         
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/convNetKerasBack.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>ConvNets on MNIST using Keras</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 22, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="e470dfcf-a2aa-4d3f-8846-28840b5d60f0" class="page sans"><header><h1 class="page-title">ConvNets on MNIST using Keras</h1></header><div class="page-body"><p id="f5fd9e1c-ac04-45c0-9140-20819823c3e6" class="">In this blog, I will cover how to use convolutional neural networks to solve the question of classifying numbers utilizing the MNIST dataset and Keras as our backend. I have also created a video for this topic if guys would like to watch:</p><figure id="b09ddf55-4084-4da1-af6f-6ae34241fc33"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Wc2cHN4DhOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>ConvNets on MNIST </figcaption></div></figure><p id="fcea24c1-e55b-4acf-9b4c-fb0396251adc" class="">
+</p><h3 id="6a365a0b-b322-49cb-b034-80b8fe448128" class="">Importing Libraries</h3><pre id="3a7b1ebd-b66b-4db2-982d-b69baed23574" class="code"><code class ="lang-python">import numpy as np
+import pandas as pd
+import keras
+import tensorflow as tf
+from keras.layers import Dense, Input, Activation, Conv2D, Flatten, MaxPooling2D
+from keras.models import Sequential
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+%matplotlib inline</code></pre><p id="40ee225f-3735-46c4-9a79-5ef3da5fea69" class="">This first step is always to import the libraries that you need. In this case, I would like to point out some new libraries.</p><ul id="722a0190-0eab-4c3a-b0e6-e74577646b88" class="bulleted-list"><li>Conv2D: This allows us to do the convolution layer that I talked about in the <a href="http://cswithchris.com/Intro%20to%20Convolutional%20Neural%20Networks.html">intro blog</a></li></ul><ul id="a7f8a03b-850b-442a-abcf-c3bd5c7b2a0e" class="bulleted-list"><li>MaxPooling2D: This allows us to reduce the dimensions that we are working with as well as de-noise the data.</li></ul><ul id="658a330f-fee6-467e-8c75-d13ee420835b" class="bulleted-list"><li>Flatten: Allows us to make the matrix from 3 dimensions into a one dimensional array which can then be fed into our feed-forward neural network</li></ul><p id="fc874367-b830-402a-901b-6e1998ed8b6b" class="">
+</p><h3 id="64ce6ccc-9393-461a-a9b5-362ef73e433c" class="">Reading the Data</h3><pre id="6ab42101-4c67-400f-a970-5278b2b0fe90" class="code"><code class ="lang-python">mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+plt.imshow(x_test[2])
+plt.show()</code></pre><p id="8a599867-789b-4e3b-9f3a-8e0ffa8e96d5" class="">The first two lines were to read in the data while the last one shows an example of the third image in the testing data just to see what we are working with</p><figure id="abc3b7c2-4736-4120-8d67-9bdb2b562e9d" class="image"><a href="ConvNets%20on%20MNIST%20using%20Keras/Untitled.png"><img style="width:246px" src="ConvNets%20on%20MNIST%20using%20Keras/Untitled.png"/></a><figcaption>Testing Example 3</figcaption></figure><p id="2deafd09-7695-4291-bb82-da741e4f4fd4" class="">These are the numbers that we are working with. To us, this would be simply a 1 but our model still needs to learn what it is.</p><p id="a9457ef9-e5f5-4797-a97c-013a1a40a28b" class="">
+</p><h3 id="b43d14c5-a7c6-4ad0-aae0-24d8a2c34dda" class="">Transforming the Data</h3><pre id="8748807f-0c68-4e1e-a874-01bcf24b10a8" class="code"><code class ="lang-python">x_train = x_train.reshape(x_train.shape[0], 28,28,1)
+x_test = x_test.reshape(x_test.shape[0], 28,28,1)
+x_train = x_train.astype(&#x27;float32&#x27;)
+x_test = x_test.astype(&#x27;float32&#x27;)</code></pre><p id="30927fe3-7985-415a-acaf-171d96a9a15f" class="">Since keras only accepts float inputs as well as four-dimensional data, we have to reshape our inputs to meet those requirements</p><p id="fb4a73a5-1d98-42a7-b604-04287df6a803" class="">
+</p><h3 id="745a48b8-a978-4a1c-b7d4-989eaf3d77bd" class="">Building the ConvNet</h3><pre id="8c2cc40e-c661-4d4c-8f80-30e24000cd62" class="code"><code class ="lang-python">model = Sequential()
+model.add(Conv2D(64,3,activation = &quot;relu&quot;,padding = &quot;same&quot;, input_shape = [28,28,1]))
+model.add(MaxPooling2D(2))
+model.add(Conv2D(128,3,activation = &quot;relu&quot;,padding = &quot;same&quot;))
+model.add(MaxPooling2D(2))
+model.add(Conv2D(256,3,activation = &quot;relu&quot;,padding = &quot;same&quot;))
+model.add(MaxPooling2D(2))
+model.add(Flatten())   
+model.add(Dense(128,  activation = &quot;relu&quot;))
+model.add(Dense(64,  activation = &quot;relu&quot;))
+model.add(Dense(10,  activation = &quot;softmax&quot;))
+model.compile(optimizer = &quot;Adam&quot;, loss = &quot;sparse_categorical_crossentropy&quot;, metrics = [&#x27;accuracy&#x27;])</code></pre><p id="39722d88-1cb8-4dee-81e1-f45121d5e03f" class="">Here, we have our ConvNet. Time to break it down.</p><ul id="0f9c43f8-c03c-4814-a398-1e22a1b356db" class="bulleted-list"><li>The Conv2D layer which I use three of accepts the first input (64) as the number of filters we are using. In this case, I utilize 64, 128, 256. It is common to use powers of 2 for the number of filters used. Then, we have the filter size which would be 3x3 since I put a three there. The activation is a relu and the padding is &quot;same&quot; which means the output size is the same as the input size. We specify the input shape only in the first layer to tell what the dimensions of our image are.</li></ul><ul id="38b6f856-a5c5-4d81-aa74-f8cb5dbe0d94" class="bulleted-list"><li>The MaxPooling2D layer accepts a parameter 2 to specify the pooling size which would be 2x2 in this example.</li></ul><ul id="4c39f6ab-a97c-4bc1-81ee-ad41db1f8508" class="bulleted-list"><li>We utilize Flatten to be able to feed our matrix into the feed forward neural network</li></ul><ul id="052b3eea-8c20-4dc8-bb13-97c3f06459a7" class="bulleted-list"><li>We have three Dense layers until we finally reach the softmax unit which has 10 neurons. 10 Neurons because we have numbers from 0-9.</li></ul><ul id="0fb54a29-c14e-491f-9fb4-525ace698dc0" class="bulleted-list"><li>We use the Adam optimizer, sparse categorical crossentropy as our loss function because we have multiple classes. If it were only one class, we would use categorical crossentropy. Since these are still discrete outputs, we cannot use mean squared error.</li></ul><h3 id="77761b09-c9f4-490c-850e-85050082922d" class="">Training the Data</h3><pre id="0749c792-1c1b-4fed-a53d-8993ea3bc02b" class="code"><code class ="lang-python">model.fit(x_train,y_train, epochs = 3)</code></pre><p id="20d90799-5482-48f2-82e8-f76fc80f6d09" class="">We train this model 3 times</p><pre id="f9136d93-ac77-43b7-81a4-0ed6f91ef964" class="code"><code class ="lang-python">Epoch 1/3
+60000/60000 [==============================] - 109s 2ms/step - loss: 0.2043 - accuracy: 0.9527
+Epoch 2/3
+60000/60000 [==============================] - 110s 2ms/step - loss: 0.0552 - accuracy: 0.9841
+Epoch 3/3
+60000/60000 [==============================] - 109s 2ms/step - loss: 0.0463 - accuracy: 0.9858</code></pre><p id="3239a04c-0b7f-400a-82a9-5510e650f958" class="">We reach a pretty high accuracy at about 98.58% accuracy.</p><p id="324f0c1b-3856-4ff2-a7a7-77d9ca543bf5" class="">
+</p><p id="8f1e9aff-b894-4c30-ac68-e0f97b64a35f" class="">
+</p><h3 id="1db51af6-91ff-4258-8ae4-c18db4f61351" class="">Conclusion</h3><p id="9fcf1998-fbe4-47cd-a65a-d8de7cf171a1" class="">That&#x27;s it! We just implemented a Convolutional Neural Network to tackle the task of image classification. I hope that you guys learned something from this blog and are able to do this yourselves.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

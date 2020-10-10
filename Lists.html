@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/listBack.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Lists</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on May 4, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="caf6f98e-5aed-412a-a8aa-24c3a10893c2" class="page sans"><header><h1 class="page-title">Lists</h1></header><div class="page-body"><p id="f93a08b9-f523-498a-b4bd-60b8b05b0916" class="">Table of Contents:</p><nav id="b83e0384-e10b-4c86-a1de-68090cac091e" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e36c2bdb-b920-4077-8777-16e7d0a7118f">Elements in a List</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#11d2f10a-64a8-4533-88f1-9e7a130c4204">Lists are Mutable</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0370162d-747c-4020-a64f-1476e1f90f23">Traversing a list</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2b9cae9b-dffa-4aad-915a-fd5760c91850">List operations</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c7446210-c70a-4827-9401-32c253f1f02c">List Slices</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ee66e53b-4b2a-4e72-a3f2-42a1f0898f42">List Methods</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7bc986fb-3e14-4be8-9808-7a6d6bc56e26">Deleting Elements</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b18155fd-07dd-4d86-9646-e881c28f63f7">Conclusions</a></div></nav><h3 id="e36c2bdb-b920-4077-8777-16e7d0a7118f" class="">Elements in a List</h3><p id="83093970-ca4f-4e59-84f0-7882dfa58a5c" class="">A list is a sequence of values that are called <strong>elements.</strong></p><p id="a3ecfe4e-7c72-46d3-85f8-3b7419e97a85" class="">We create lists by enclosing elements utilize square brackets: <strong>[ and ]</strong></p><p id="6f14c5f4-10f3-4ba2-a6ea-5ec7a64e5672" class="">We look at the indices of a list just like the indices of a String, starting at 0 for the first item, 1 for the second item, 2 for the third item and so on.</p><p id="95422e40-4f6b-4a59-ae41-5ef420cedddd" class="">Examples:</p><pre id="a4a4a7e3-5663-4d65-8e80-bfdf778553ec" class="code"><code class = "lang-python">x = [10,20,30,40]
+y = [&#x27;Hey&#x27;,2,4.0,True]
+z = [&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;]</code></pre><p id="92d2275c-87f1-4cf6-9cf3-37d011302446" class="">You can also create an empty list that looks something like this </p><pre id="828cd114-53ca-4583-ae8d-bc3981a962c9" class="code"><code class = "lang-python">x = []</code></pre><p id="43173cce-9696-48cc-8291-844af8e1495e" class="">
+</p><h3 id="11d2f10a-64a8-4533-88f1-9e7a130c4204" class="">Lists are Mutable</h3><p id="1a875b64-92f0-4135-9823-9fe476c316e4" class=""><strong>Mutable </strong>just means that we are able to assign certain values to certain elements in the array. </p><p id="3f51c855-8c4c-4adb-851c-25e52c45d70f" class="">Example:</p><p id="805c9e96-f7f1-4a66-b741-e8d94a9b9c32" class="">Let&#x27;s say we have an array</p><pre id="39cc51a8-6a98-47fc-933f-616f387ef36e" class="code"><code class = "lang-python">x = [1,2,3]</code></pre><p id="98bd0541-5f44-4999-b02a-6d37c9d2a9a7" class="">Since lists are mutable, we could then change the second element for example to 5</p><pre id="04498f0c-5a80-40d5-916f-73cecb00bf0f" class="code"><code class = "lang-python">x[1] = 5
+print(x)
+&gt;&gt;&gt; [1,5,3]</code></pre><p id="35fd58e8-e1b5-417f-9217-867f6d4ac503" class="">This assignment statement changes the second element from 2 to 5. </p><p id="47f18f37-fa45-4886-bdcf-134ed27866e1" class="">
+</p><h3 id="0370162d-747c-4020-a64f-1476e1f90f23" class="">Traversing a list</h3><p id="2d0b43f7-28b2-4881-8bab-33b78a9ef1bd" class="">We can traverse each element within a list using a <code class = "lang-python">for</code> loop.</p><pre id="f4ff5ba5-a442-49bb-b542-c45fabf75064" class="code"><code class = "lang-python">numbers = [1,2,3,4,5]
+for num in numbers:
+	print(numbers)
+&gt;&gt;&gt; 1 
+&gt;&gt;&gt; 2 
+&gt;&gt;&gt; 3
+&gt;&gt;&gt; 4
+&gt;&gt;&gt; 5</code></pre><p id="1297dc2d-ada4-4045-b508-fd750418697a" class="">This loop is good for just <strong>reading the elements</strong> however, if we want to assign certain values or change those values, we need indices.</p><p id="6ee898ee-c912-411a-9441-3cebd1c18415" class="">Thus, we would use the range function:</p><pre id="bf26bc6e-40a9-4e20-897e-750201064bc0" class="code"><code class = "lang-python">for i in range(len(numbers)):
+	numbers[i] = numbers[i]*2
+print(numbers)
+&gt;&gt;&gt; [2,4,6,8,10]</code></pre><p id="31e3f777-c66b-4077-a54d-3c3767098510" class="">This loop traverses from the 0th index to the index <code class = "lang-python">len(numbers) - 1</code> </p><p id="4ad709fe-5688-4070-b26f-b30d0d1fd540" class="">
+</p><h3 id="2b9cae9b-dffa-4aad-915a-fd5760c91850" class="">List operations</h3><p id="6cd653fc-fa7b-46ba-a7b7-8bc69f341acb" class="">We could use the addition operator to <strong>concatenate </strong>lists.</p><pre id="4fa46486-2fb1-48ca-a51d-4018a4f5a62b" class="code"><code class = "lang-python">a = [1,2,3]
+b = [4,5,6]
+c = a+b
+print(c)
+&gt;&gt;&gt; [1,2,3,4,5,6]</code></pre><p id="82b09605-1eba-4e51-ac78-d2314c029683" class="">We could even multiply lists which multiply the number of times that an element occurs.</p><pre id="a47bda6a-dacf-4020-bb45-d68a3c151d2a" class="code"><code class = "lang-python">y = [1,2,3] * 3
+print(y)
+&gt;&gt;&gt; [1,2,3,1,2,3,1,2,3]</code></pre><p id="a1ee144f-2ef6-4f01-a6f9-b2d8f6690170" class="">
+</p><h3 id="c7446210-c70a-4827-9401-32c253f1f02c" class="">List Slices</h3><p id="af1f83d2-862b-467f-89e4-a7c633ed718b" class="">We could use the slice operator in order to get a part of the entire list based on a starting and ending index.</p><p id="fbe5821e-db5f-4d76-bbe0-9cdcc75d60c7" class="">This works similar to Strings and substrings except with Strings, each element is a character but for lists, each element is a certain value.</p><pre id="c3a31ba2-2bed-4723-8abf-b008c38c9e73" class="code"><code class = "lang-python">a = [1,2,3,4,5,6]
+b = a[1:3]
+print(b)
+&gt;&gt;&gt; [2,3]</code></pre><p id="18dbe405-ec25-41da-a554-fef660aa8bc2" class="">The slicing begins at index one and ends at (3-1) or 2.</p><p id="c93418a8-bd8b-4313-98d7-d452f9b09d7f" class="">We could omit the first index to indicate slicing from the second index all the way to the beginning.</p>
+                
+                
+                <pre id="f0ac1fbb-9d65-4448-a97f-35f40d49b45e" class="code"><code class = "language-python">a = [1,2,3,4,5,6]
+c = a[:3]
+print(c)
+&gt;&gt;&gt; [1,2,3]</code></pre>           
+                <p id="3123682a-f3e3-4e60-8d42-a3ee37c000ec" class="">Conversely, we could omit the second index to indicate slicing from the first index all the way to the end </p><pre id="34517c82-7125-49da-a31b-18702ffabe3a" class="code"><code class = "lang-python">a = [1,2,3,4,5,6]
+d = a[3:]
+print(d)
+&gt;&gt;&gt; [4,5,6]</code></pre><p id="1d094c91-3d11-4e9b-b589-f7e8334af4f4" class="">
+</p><h3 id="ee66e53b-4b2a-4e72-a3f2-42a1f0898f42" class="">List Methods</h3><p id="51bdf050-0078-4ab2-b00b-438e45cc798d" class="">Python has several important methods that operate on lists.</p><p id="bce68a79-4569-4124-ad66-86f86ae91888" class=""><code class = "lang-python">append</code> adds a new element to the end of a list</p><pre id="cbb36ac3-1169-43d2-bae8-c71682fe9262" class="code"><code class = "lang-python">t = [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;]
+t.append(&#x27;d&#x27;)
+print(t)
+&gt;&gt;&gt; [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;]</code></pre><p id="edc7cd5b-64b4-488b-a9db-757847ea2d3a" class=""><code class = "lang-python">extend</code> takes another list and appends it to the original list.</p><pre id="6f732a4d-fdf0-4b1d-a1a5-b26a8cd5a33b" class="code"><code class = "lang-python">t = [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;]
+y = [&#x27;d&#x27;,&#x27;e&#x27;,&#x27;f&#x27;]
+t.extend(y)
+print(t)
+&gt;&gt;&gt; [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;,&#x27;e&#x27;,&#x27;f&#x27;]</code></pre><p id="043fccb8-b76e-42ed-8762-380b51cde2e1" class=""><code class = "lang-python">sort</code> arranges the elements in ascending order.</p><pre id="77513366-09f8-4ef5-84c5-b635c23ca95a" class="code"><code class = "lang-python">z = [2,3,6,5,1,4]
+z.sort()
+print(z)
+&gt;&gt;&gt; [1,2,3,4,5,6]</code></pre><p id="7e4e8f86-aca9-4453-afcf-e87ffea1a49d" class="">
+</p><h3 id="7bc986fb-3e14-4be8-9808-7a6d6bc56e26" class="">Deleting Elements</h3><p id="c8007d45-2b2a-49d9-a35f-ab036d9034b7" class=""><code class = "lang-python">pop</code> allows us to delete elements given a certain index</p><pre id="5bea6d15-9cf0-40b0-8654-b61dba00d74f" class="code"><code class = "lang-python">t = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]
+x = t.pop(1)
+print(t)
+&gt;&gt;&gt; [&#x27;a&#x27;, &#x27;c&#x27;]</code></pre><p id="1285a2b9-cb78-4d09-b760-4a837d7d9ca5" class=""><code class = "lang-python">remove</code> lets us delete elements given the element to remove but not the index</p><pre id="9adcda9b-c62b-4b89-b156-245ffadb6e28" class="code"><code class = "lang-python">t = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]
+t.remove(&#x27;b&#x27;)
+print(t)
+&gt;&gt;&gt; [&#x27;a&#x27;, &#x27;c&#x27;]</code></pre><p id="cc57411d-b48e-4324-8407-5e61bca7e9b0" class="">
+</p><h3 id="b18155fd-07dd-4d86-9646-e881c28f63f7" class="">Conclusions</h3><p id="16ed7a35-6b75-4189-a2c2-e600800c6b71" class="">I hope you guys enjoyed this blog going over how to implement lists onto Python!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+</body>
+
+</html>

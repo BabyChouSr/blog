@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/knnback.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>K-Nearest Neighbors Basics</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 16, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="62fc8817-859c-463a-ae4a-d0e2ad75bea9" class="page sans"><header><h1 class="page-title">K-Nearest Neighbors Algorithm</h1></header><div class="page-body"><p id="d1cbb83a-7a58-4643-a07c-2cd58f65ea4e" class="">The K-Nearest Neighbors Algorithm is a powerful Machine Learning classification algorithm that works on supervised data.</p><h3 id="d52e4fb4-bd74-4e6b-9d12-85b04377bd1b" class="">Supervised Machine Learning</h3><p id="e25139a9-b5e2-4ad5-a128-02c8364957c2" class="">Supervised data is essentially data that we have both the input and the output of. Pretend we are told to look at a picture of a dog and we have to label it.</p><p id="aad320d2-5d65-4689-afc5-01ba8112e995" class="">
+</p><figure id="71aae780-1b42-40e1-a723-3c458fba945b" class="image"><a href="K%20Nearest%20Neighbors%20Algorithm/Untitled.png"><img style="width:576px" src="K%20Nearest%20Neighbors%20Algorithm/Untitled.png"/></a><figcaption>Picture of a Dog</figcaption></figure><p id="1a46cbf3-5bbe-4aed-a34a-5196d1d41f37" class="">After looking at a picture of this, we would all scream dog! However, what if the animal was some mythical creature that we didn&#x27;t know the name of? Because we don&#x27;t know the name of the creature, we can&#x27;t label it which is why it&#x27;s unsupervised machine learning.</p><p id="b7014fa4-644a-4353-9c01-8e6e9b2a976f" class="">Now that we get a gist of the difference between the two, let&#x27;s jump into classification.</p><p id="b4702335-a1d9-422e-94c8-3397079bcb65" class="">
+</p><h3 id="192f9dca-ee5c-45d1-9d86-87bb35ba8a48" class="">Classification</h3><p id="92eeb7ca-cfa6-41cb-b1e7-60c1b87de800" class="">A classification algorithm has discrete values as its output. It comes out with either a 1 or 0 telling whether or not it is part of a class. </p><p id="756654f3-d827-4cfb-b55a-22eb43b13902" class="">If we were to have for example, a question which outputs &quot;1&quot; if the person likes smoking and &quot;0&quot; if the person doesn&#x27;t. Notice how if we add &quot;person likes smoking&quot; + &quot;person doesn&#x27;t like smoking,&quot; it really doesn&#x27;t mean anything. These labels of numbers are purely representational and don&#x27;t have any value.</p><p id="2d58ba94-4c0f-4dea-b2ea-5bc5ad5ba5dc" class="">
+</p><h3 id="19a499b1-219d-4008-a2f3-141641dd7fa3" class="">The KNN Algorithm</h3><p id="627e0d97-bda0-4f13-b6af-8fb032ad6fa7" class="">Now we are ready to begin with the Algorithm. The entire algorithm is based on the fact that similar points or objects are closer together. In order to find how close objects are, we have to use a distance measurement which is usually the Euclidean distance because it is easy to implement.</p><p id="5aa6a6e9-b7e5-4438-a3a8-b22e5071daa1" class="">
+</p><figure id="393fe85f-2430-4078-b464-bfe8b255d22e" class="image"><a href="K%20Nearest%20Neighbors%20Algorithm/Untitled%201.png"><img style="width:403px" src="K%20Nearest%20Neighbors%20Algorithm/Untitled%201.png"/></a><figcaption>This was done on the Iris Dataset</figcaption></figure><p id="39b27abe-a9ec-4d80-8dd6-28d02068e07f" class="">As an example, notice how the green dots are closer together and the red dots are close together on the bottom left? We try to use the numerical features to find the dots closest to each other.</p><p id="92bf684e-245a-4a0d-900d-6ac97d58d334" class="">The Implementation will go along the lines of this:<div class="indented"><ol id="a93bd2c2-e3b4-4100-908c-e043e9de2ffb" class="numbered-list" start="1"><li>Load the Data</li></ol><ol id="abd79f6c-b892-45e5-9459-fe92594bdc4c" class="numbered-list" start="2"><li>Pick the Starting &quot;K&quot; # of Neighbors</li></ol><ol id="16076e22-eb5a-41c4-aea9-1423c3ac2464" class="numbered-list" start="3"><li>For each example point in the data<ol id="214a7a45-7322-4592-aea9-b4bc02fe4d4e" class="numbered-list" start="1"><li>Calculate the distance between this data and every other data and add it to a list</li></ol><ol id="5935c5ce-20e2-48c3-bc0f-5590bc4cc494" class="numbered-list" start="2"><li>Sort the list so we get an understanding of the order of distances</li></ol></li></ol><ol id="9dcf7524-714f-4662-bf89-5052ec3e8114" class="numbered-list" start="4"><li>Pick the first &quot;K&quot; closest neighbors to that point</li></ol><ol id="ed39c7bd-8f5a-46aa-88e6-cb4051d98302" class="numbered-list" start="5"><li>Get the labels of the &quot;K&quot; entries (1s or 0s)</li></ol><ol id="0b70b10e-6b51-48bb-9bc2-b6e6a51bd1b2" class="numbered-list" start="6"><li>Print out the mode of the labels which will tell us the class of the one we&#x27;re predicting. </li></ol></div></p><p id="ea184bc2-3239-454a-9d5f-4b36784e7d81" class="">
+</p><h3 id="3439b39e-af10-42c2-bedf-a5accbbc5b46" class="">Value of K</h3><p id="9cbd27da-41f1-4a42-8bc4-40e9bd670bc6" class="">We have to be able to pick the best value of K when it comes to our classification algorithm. Note a  couple important tips<div class="indented"><ol id="02a3d739-7cc8-4cf3-8334-99010c78b4ff" class="numbered-list" start="1"><li>A K value that is too low is not very stable. Imagine if we had a K of 1 or 2. We are basing the new point&#x27;s class off of just 1 or 2 neighbors which can easily be skewed if that 1 or 2 are different.</li></ol><ol id="2b8f586f-fe46-4a3f-9b8f-2bbe9972633d" class="numbered-list" start="2"><li>A K value that is too high is increasingly less stable because it takes the average over a big population. Imagine if we wanted to classify the likelihood someone votes democrat in California. Would it be right to include the entire nation? No, it would be less likely.</li></ol></div></p><p id="0f9c03c3-eb0b-4b47-b2ac-77a7dc1c41c2" class="">
+</p><h3 id="06af1493-03f8-4e17-934b-f482e4b828a7" class="">Advantages</h3><ol id="bf4e567b-c29a-4be0-af19-0cc057cef712" class="numbered-list" start="1"><li>Algorithm is easy to implement</li></ol><ol id="f7450ea8-54f9-4a27-9707-5f1e024f2a2b" class="numbered-list" start="2"><li>No Hyperparameters to Tune</li></ol><h3 id="7355fc77-f30f-4524-89f1-5e61f56207b8" class="">Disadvantages</h3><ol id="63aa8fe8-cb80-4a3a-a914-a968470ac7bd" class="numbered-list" start="1"><li>Computational Speed Scales with Data Volume Making it Slow on large Datasets</li></ol><p id="150799f4-4071-4800-84bd-6a86c00a26b0" class="">
+</p><h3 id="2e4ba15a-6a0c-41c1-b2ee-ac1c0d81dd60" class="">Conclusion</h3><p id="730ea851-1de7-4288-9832-e250a58d01d9" class="">I hope that you were able to learn something from this blog about K-Nearest Neighbors Classification. Now, try it yourself!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

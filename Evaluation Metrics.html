@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.66em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/evalMetricsBack.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Evaluation Metrics</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 23, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="899570c6-972f-46d0-91f9-acb6560e2d3e" class="page sans"><header><h1 class="page-title">Evaluation Metrics</h1></header><div class="page-body"><p id="66b768c0-ce38-41ac-8e22-60cd0d4af525" class="">In this blog post, I will go over several Evaluation Metrics and how to implement them utilizing Python.</p><p id="59364346-2a57-4369-9ac7-f23befe7ec6e" class="">I actually created a video on this topic if you guys want to check it out:</p><figure id="d7f70e1b-114a-4467-8c08-4918da8dd017"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/6hYvygrxAx4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Evaluation Metrics Video</figcaption></div></figure><p id="b04bad9e-cc66-4444-8679-83610022edd1" class="">
+</p><h3 id="e6200bd3-b6a0-4b61-98c4-3bb2d3fff78d" class="">1. Confusion Matrix</h3><p id="d65ba7c1-f3b9-41c0-b71a-217600000d79" class="">Confusion Matrix is an amazing tool for evaluating how good your model is because it tells us</p><ul id="c81f5519-4fc0-486b-bb19-542c2e9438ce" class="bulleted-list"><li>True Positive<ul id="6d743f90-c492-473d-b767-48533f331de7" class="bulleted-list"><li>The model predicts positive and the actual value is positive</li></ul></li></ul><ul id="88174663-2c8b-4de3-b880-486b6636e692" class="bulleted-list"><li>True Negative<ul id="2b30567a-073f-4c46-831c-f2794d1f7b7a" class="bulleted-list"><li>The model predicts negative and the actual value is negative</li></ul></li></ul><ul id="9a16d8e4-2165-4c5a-aebb-30dcc9a8139f" class="bulleted-list"><li>False Positive<ul id="0f76a030-8c83-4c89-8314-f7dfdf559142" class="bulleted-list"><li>The model predicts positive but the actual value is negative</li></ul></li></ul><ul id="6281ee30-77df-4404-9cad-8a23e3c6344b" class="bulleted-list"><li>False Negative<ul id="143030f2-203f-497a-b40d-7c32523a9e15" class="bulleted-list"><li>The model predicts negative but the actual value is positive</li></ul></li></ul><p id="1879a456-3a88-4e0a-87e7-81ff3e3aad82" class="">Essentially, it tells us how the model does well and how the model does poorly as well, demonstrating what goes wrong. </p><p id="957719ca-76c1-4224-b270-e642197bd496" class="">An Example would be the classification of the breast cancer dataset:</p><pre id="e0a158ea-a4fa-4eb5-9185-c4e57a1e02bd" class="code"><code class = "lang-python">from sklearn.metrics import confusion_matrix
+import numpy as np
+
+cm = np.array(confusion_matrix(y_test, y_predict, labels = [1,0] ))
+confusion = pd.DataFrame(cm, index = [&#x27;is_cancer&#x27;, &#x27;is_healthy&#x27;], columns = [&#x27;predicted_cancer&#x27;, &#x27;predicted_healthy&#x27;])
+sns.heatmap(confusion, annot=True)</code></pre><p id="0a508233-3233-4821-9578-8a3daf374173" class="">You&#x27;ll need to import the libraries to be able to run this. Essentially, we take y_test (from train_test_split) and our predictions which can be easily created by predicting the y values from the X_test array. The labels is just 1 and 0 because it&#x27;s whether the person has cancer (1) or doesn&#x27;t (0). </p><p id="6652daef-0996-46ae-8541-88cb7e75346b" class="">The confusion matrix is then fed into a dataframe where we label the y axis and the x-axis of the confusion matrix.</p><p id="422a9f8b-82c6-4c8c-9758-228b80e22bf2" class="">The result is something like this:</p><figure id="20f1e7c0-69a7-48e7-995f-7e206978a981" class="image"><a href="Evaluation%20Metrics/Untitled.png"><img style="width:359px" src="Evaluation%20Metrics/Untitled.png"/></a><figcaption>Confusion Matrix</figcaption></figure><p id="b4d92fc6-6d44-43f5-a15e-ff9902764a5f" class="">It clearly allows us to see that we did well at predicting cancer or whether the tumor was benign. But, there is some discrepancy as we see we predicted cancer for 2 when in fact they were healthy.</p><p id="0ef457bd-fb67-40b1-a80c-6d947a5b2cec" class="">
+</p><h3 id="e8dab6b6-749c-4884-83b1-a2dd150d2c29" class="">2. Classification Report</h3><p id="eaa0f580-61c8-4154-b19b-ccb7e0be800a" class="">Classification Reports are also amazing to tell us how well our model does. For example, using a classification we get to see our <strong>precision </strong>and <strong>recall </strong>score which tells us how well our model 1. labels things correctly and 2. remember features throughout the dataset.</p><p id="a4b42025-f849-489c-a054-64fdbd8abde0" class="">It&#x27;s also super easy to implement</p><pre id="41dd561e-84b7-4cf3-8673-f604403b26f2" class="code"><code class = "lang-python">from sklearn.metrics import classification_report
+print(classification_report(y_test,y_predict)) # THATS IT</code></pre><p id="7dc64b80-c7e2-4364-a662-9f4813d594dd" class="">Output:</p><pre id="3467ce42-adf3-47b9-adf1-7362a4ffd021" class="code"><code class = "lang-python">              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        43
+           1       0.62      1.00      0.77        71
+
+    accuracy                           0.62       114
+   macro avg       0.31      0.50      0.38       114
+weighted avg       0.39      0.62      0.48       114
+</code></pre><p id="8a0bf5da-87e4-4962-a719-45cee2703143" class="">
+</p><h3 id="9b737b30-bd1d-4d7f-a4b9-161aa1e5b1fe" class="">3. Mean Squared Error</h3><p id="83b1c92f-c55d-43a4-9c9d-2821a7828e07" class="">Now, what if our data is continuous? The first two evaluation metrics were obviously for discrete outputs such as binary classification, but what if we wanted to do something linear regression? That&#x27;s where Mean Squared Error comes in.</p><pre id="b37afbc0-57a8-47ed-83a8-788d4754709e" class="code"><code class = "lang-python">from sklearn.metrics import mean_squared_error
+print(mean_squared_error(y_test,y_pred))</code></pre><p id="ebcd6733-29f2-4007-8e72-3e97bea3fa49" class="">The code looks something like this and allows us to see how far our predicted values are from the actual. The mathematical formula looks something like this: </p><figure id="04f406f8-49e7-4030-819f-15a0ada8b527" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mo>(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mover accent="true"><msub><mi>y</mi><mi>i</mi></msub><mo>^</mo></mover><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">MSE = \frac{1}{N}\sum_{i=1}^N (y_i - \hat{y_i})^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.106005em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></div></figure><p id="a14a47cd-5fac-48c9-99ed-41aa9be739f5" class="">Which is basically the average of the residuals squared.</p><p id="b04ed055-70b8-4a08-8191-6d6ef9233e19" class="">
+</p><h3 id="6b6dbcd0-3b60-48d0-84ed-d450eaee8c5a" class="">4. R-Squared Score</h3><p id="190e441e-ec85-4fcc-8ede-9ecbf620882e" class="">The last evaluation metric that I will go over in this blog is the R-Squared Score. It tells us the proportion of the variability in the y variable that can be explained by the model on the x-variable.</p><pre id="0459b499-4af6-4058-a727-9cb42865288d" class="code"><code class = "lang-python">from sklearn.metrics import r2_score
+print(r2_score(y_test, y_pred))</code></pre><p id="b78c2250-a6c5-494f-a0c9-7650799edcea" class="">The implementation looks something like this. </p><p id="57c06250-f1bd-45b4-8881-3d1211ff0b51" class="">Let&#x27;s say we get a score of 0.734. The interpretation would be that the linear model with the x-variable can explain about 73.4% of the variability in the y-variable.</p><p id="9ec4431e-63b6-4fd4-9405-e217330bcc25" class="">
+</p><h3 id="89784f0c-2427-4958-ab56-834f2d241220" class="">Conclusion</h3><p id="1c657615-a62b-45ea-b0bd-38e767e38d7a" class="">Now you have several evaluation metrics up your sleeve that you can use to evaluate your model and hopefully improve it!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+
+</body>
+
+</html>

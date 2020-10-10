@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 33%;
+            flex: 1 1 180px;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.66em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.75em;
+            margin-top: 0.25em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+        .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+        }
+
+        .table_of_contents-indent-2 {
+            margin-left: 3rem;
+        }
+
+        .table_of_contents-indent-3 {
+            margin-left: 4.5rem;
+        }
+
+        .table_of_contents-link {
+            text-decoration: none;
+            opacity: 0.7;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+        }  
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pieBack.PNG')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Pie Charts</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 26, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="1d96467e-2435-45be-8d61-09ab8659afe0" class="page sans"><header><h1 class="page-title">Pie Charts</h1></header><div class="page-body"><p id="0bc16af7-7d43-4f8b-ab36-3e0a2560e5ee" class="">In this blog, I will be going over how to plot pie charts which is useful to see the relative area between certain data. We rely on the user&#x27;s intuition of area in order to create a meaningful graph.</p><p id="bac8d432-fdea-452a-bcf5-7348c98d2f7e" class="">The Layout of the blog is down below.</p><nav id="8418b9d7-c9ba-4949-85a6-b316b1ca8285" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#073a2a9d-f956-4516-b0ee-1280f382098d">Importing Libraries</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#55244a51-9cbf-4eaa-ae5b-592d0f996d16">Background Info</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#771a287d-efae-47fe-9657-da3e5e5f6be4">Exploding</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d215a802-7f2b-4abb-8e7f-7dd4bba2cb5f">Conclusion</a></div></nav><p id="ab8f7ab2-9ee2-44f2-805f-20715d359bd6" class="">I have also created a video on this subject:</p><figure id="b13b7343-4b32-493b-bca0-e748a4e56695"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/mukcMtmkrVg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Pie Chart Video</figcaption></div></figure><h3 id="073a2a9d-f956-4516-b0ee-1280f382098d" class="">Importing Libraries</h3><p id="35cbae40-390d-4c07-a91e-e70febf10289" class="">We first import the libraries that we need</p><pre id="f6610478-3f9c-4698-99da-9ee8267472ea" class="code"><code class = "lang-python">import numpy as np  
+import matplotlib.pyplot as plt
+%matplotlib inline</code></pre><p id="18ee7b04-84bf-462f-8d65-c8b3ad76d5d3" class="">
+</p><h3 id="55244a51-9cbf-4eaa-ae5b-592d0f996d16" class="">Background Info</h3><p id="98d5a1e6-37af-4d0c-9d43-fe25e18f9240" class="">Pie Charts work by utilizing the proportions of the numerical data. </p><p id="7a8aa306-6e55-45fd-97eb-c93b5771ac59" class="">In this case, with slices = [10,20,30,40], the plt.pie() function will calculate the proportion of each of  those parts over the total.</p><p id="1b24ac09-19fc-4c10-a100-d72609c51e97" class="">Mathematically it would look something like this:</p><figure id="d8235ba9-9d4e-4111-ae8b-c4e106d5799c" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mfrac><mn>10</mn><mrow><mn>10</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>30</mn><mo>+</mo><mn>40</mn></mrow></mfrac><mo separator="true">,</mo><mfrac><mn>20</mn><mrow><mn>10</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>30</mn><mo>+</mo><mn>40</mn></mrow></mfrac><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\frac{10}{10+20+30+40}, \frac{20}{10+20+30+40},.....\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mopen">{</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">}</span></span></span></span></span></div></figure><p id="82fd2701-f639-46ff-b8de-3d71bdb851e9" class="">The labels are the name of each of the slices of the graph. The color is the color that we give our pies. </p><pre id="dce1e43b-3595-43e3-9de0-21604c612072" class="code"><code class = "lang-python">slices = [10,20,30,40]
+labels = [&#x27;TEN&#x27;,&#x27;TWENTY&#x27;,&#x27;THIRTY&#x27;,&#x27;FORTY&#x27;]
+colors = [&#x27;blue&#x27;,&#x27;green&#x27;,&#x27;yellow&#x27;,&#x27;purple&#x27;]
+
+plt.style.use(&#x27;dark_background&#x27;)
+plt.pie(slices, labels = labels, colors = colors)
+plt.title(&quot;pies are good&quot;)
+plt.tight_layout()</code></pre><figure id="e4ec3a61-589f-42d0-9993-5a41c8ec0283" class="image"><a href="Pie%20Charts/Untitled.png"><img style="width:277px" src="Pie%20Charts/Untitled.png"/></a></figure><p id="bd583566-c1da-4df7-b5f7-da5002b0bc1e" class="">Here is our pie chart. However what if we wanted to emphasize certain features on the graph? Everyone is just glued together right now and we don&#x27;t seem to get a clear message from all this.</p><p id="172dadce-ca44-495d-9661-c5a36207c924" class="">
+</p><h3 id="771a287d-efae-47fe-9657-da3e5e5f6be4" class="">Exploding</h3><p id="fa99ed2b-1d81-4523-870b-4433e03d9fcc" class="">We can &quot;explode&quot; part of the graph out of the original graph to create contrast and to demonstrate the differences in the graph</p><pre id="f97ca704-a4e0-4530-837c-0b342cc39fa2" class="code"><code class = "lang-python">explode = [0,0,0.2,0]
+slices  = [10,20,30,40]
+labels = [&#x27;TEN&#x27;,&#x27;TWENTY&#x27;,&#x27;THIRTY&#x27;,&#x27;FORTY&#x27;]
+colors = [&#x27;blue&#x27;,&#x27;green&#x27;,&#x27;yellow&#x27;,&#x27;purple&#x27;]
+
+plt.style.use(&#x27;dark_background&#x27;)
+plt.pie(slices, labels = labels, explode = explode, colors = colors, autopct = &#x27;%1.2f%%&#x27;)
+plt.title(&quot;pies are good&quot;)
+plt.tight_layout()</code></pre><p id="14e283d6-988a-4340-ab41-866d47ecb72f" class="">Notice how I added an &quot;explode&quot; array to tell matplotlib how much I want to explode it by. 0 just means that we won&#x27;t explode it at all while the 0.2 tells matplotlib to explode a little. The autopct parameter tells matplotlib to show the percentages up to 2 decimals.</p><figure id="90c48c60-99a1-4fe5-99ba-839a78ce1580" class="image"><a href="Pie%20Charts/Untitled%201.png"><img style="width:299px" src="Pie%20Charts/Untitled%201.png"/></a></figure><p id="e0a43da9-2eab-4419-898f-f6ef0ed9527d" class="">
+</p><h3 id="d215a802-7f2b-4abb-8e7f-7dd4bba2cb5f" class="">Conclusion</h3><p id="a3db1a5e-02f7-4be8-b702-6b0c92a1eed9" class="">It&#x27;s really THAT easy to plot pie charts using matplotlib. A word of caution is that when there are multiple groups (I&#x27;d say over 5), pie charts are rarely a good choice. All the data gets smushed together and is hard to see. Thus, I would be very careful as to whether or not a pie chart really conveys the message that you want. </p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+</body>
+
+</html>

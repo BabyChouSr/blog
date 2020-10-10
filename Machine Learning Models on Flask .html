@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/MLFlask.jpeg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Machine Learning Models on Flask</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on May 31, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="17dd9119-0c4a-41e3-b7fc-c36bd493837c" class="page sans"><header><h1 class="page-title">Machine Learning Models on Flask</h1></header><div class="page-body"><p id="7846f6d0-f42a-48b5-b58e-cec92d46ae95" class="">Imagine that we have created our machine learning model and now all we have to do is put it on a website so that users would be able to test our model for themselves.</p><p id="d9926947-a3ce-416b-9d8d-63094ea79c32" class="">I will be doing this based on a logistic regression machine learning model which predicts whether a flower is an <em>Iris Virginica </em>or not based on its petal width</p><p id="3af3f452-4a96-45ef-929d-631223a4b492" class=""><strong>Table of Contents:</strong></p><nav id="0984d874-665f-471f-8ec1-bb8d20ba4f80" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d24c4123-024b-4ee7-b4d0-90ce68405639">Machine Learning Model</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3798aede-e8e0-468e-b2c4-29b76938d642">Asking for Inputs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#edda2e51-5f1e-4c27-9069-51520926c2dd">Processing Inputs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f4baa936-1bf4-43a0-8aa8-2997cd59be40">Outputting the Answer</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#54373438-5818-40bf-b344-026cb75367b5">Testing it Out</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#67a2990b-a883-4271-91c0-5113069eb0ba">Conclusion</a></div></nav><p id="0a2ef55e-2091-4759-afd0-b58ca8308653" class="">The first thing we need is our machine learning model ready. We want to first test if the program works without the Flask Application to make sure inputs work. </p><p id="07e03eb9-7400-4199-8643-8ed02b2e3e80" class="">Note how I use the statement <code class = "lang-python">width2 = float(width)</code> because inputs are always going come in the form of strings which is why I have to bring it back into float.</p><p id="128700fc-28db-42dd-9f16-f804ce151931" class="">We will be copying this code later on into our main program.</p><h3 id="d24c4123-024b-4ee7-b4d0-90ce68405639" class="">Machine Learning Model</h3><pre id="faed4c3a-d844-4648-b2f3-63cc8ee8ae04" class="code"><code class = "lang-python">from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+def logisticPredict(width):
+    width2 = float(width)
+    inputWidth = []
+    inputWidth.append(width2)
+    inputWidth = np.asanyarray(inputWidth)
+    inputWidth = inputWidth.reshape(-1,1)
+    print(inputWidth)
+    iris = datasets.load_iris()
+    X = iris[&#x27;data&#x27;][:, 3:]  # petal width
+    y = (iris[&#x27;target&#x27;] == 2).astype(np.int)  # 1 if Iris Virgnica, else 0
+    logistic = LogisticRegression()
+    logistic.fit(X, y)
+    y_proba = logistic.predict(inputWidth)
+
+    if y_proba == 1:
+        answer = &quot;This plant is an Iris Virginica&quot;
+        return answer
+    else:
+        answer = &quot;This plant is not an Iris Virginica&quot;
+        return answer
+print(logisticPredict(-2))</code></pre><p id="7893fffe-b9b1-41fe-bc4b-3501101147b0" class="">Let&#x27;s prepare our html to accept inputs:</p><p id="25b776c7-a2e7-4e65-93ac-e8627805c432" class="">To clarify<div class="indented"><p id="4b0ac41b-7a85-47ab-84c8-6807bf1867ac" class="">The name of my template file is: <code class = "lang-python">app_template_linalg.html</code></p><p id="a93c0d84-06e9-49e1-986a-e4316f65a6a7" class="">The name of my file that accepts the inputs is: <code class = "lang-python">linalg.html</code></p><p id="3a9e809e-af8e-4d19-9ce1-c00cb5d6f800" class="">The name of my file that outputs the results is: <code class = "lang-python">linalgresults.html</code></p><p id="ca829d0d-9ffa-44fc-962e-9ee0a71d21c0" class="">The name of my file of the actual flask app is: <code class = "lang-python">app.py</code></p></div></p><p id="86f776d5-5224-45f3-b345-7d99ab6a0b9b" class="">If you are like me and are using bootstrap templates, your code will look something like this for <code class = "lang-python">linalg.html</code> or the section that accepts the inputs:</p><h3 id="3798aede-e8e0-468e-b2c4-29b76938d642" class="">Asking for Inputs</h3><pre id="f34ea5db-eedd-4540-9923-fbeffdf5537a" class="code"><code class = "lang-python">{%extends &quot;app_template_linalg.html&quot;%}
+{%block content%}
+ &lt;div class=&quot;container&quot;&gt;
+          &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col&quot;&gt;
+
+                &lt;form action=&quot;/linalg&quot; method=&quot;POST&quot;&gt;
+
+              &lt;h1&gt;Type of Flower Calculator&lt;/h1&gt;
+              &lt;hr&gt;
+                &lt;div class=&quot;input-group mb-3&quot;&gt;
+                  &lt;div class=&quot;input-group-prepend&quot;&gt;
+                    &lt;span class=&quot;input-group-text&quot;&gt;Petal Width&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name = &quot;width&quot; placeholder = &quot;Ex. 2.5&quot;&gt;
+                &lt;/div&gt;
+
+
+                &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Predict!&lt;/button&gt;
+                &lt;/form&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+{%endblock%}</code></pre><p id="c47d5934-1260-43c5-9d0e-957da20c9bf6" class="">To elaborate, the code block <code class = "lang-python">{%extends &quot;app_template_linalg.html&quot;%}</code> allows us to take the structure of another html as ours. This means that this page will share the same html as another page; in this case, the other page contains all the css and javascript components which we don&#x27;t want to write again which is why we extend it.</p><p id="01913ad3-6319-493c-9fde-b5de2ed8686d" class="">Now, the <code class = "lang-python">{%block content%} {%endblock%}</code> allows us to write in a certain section of our template which I have added:</p><pre id="4d12c406-5274-4b6f-b946-fcaf6be61eb3" class="code"><code class = "lang-python">&lt;div class=&quot;container-fluid p-0&quot;&gt;
+    &lt;section class=&quot;resume-section p-3 p-lg-5 d-flex align-items-center&quot; id=&quot;linalg&quot;&gt;
+     {%block content%}
+        {%endblock%}
+    &lt;/section&gt;</code></pre><p id="0232cd61-f7c5-41b2-8e26-66a1b4f6d77a" class="">This is written in <code class = "lang-python">app_template_linalg.html</code> which serves as a precursor to our actual app. What is does is it opens up space for our actual program which will write inside the section that says block content. </p><p id="f4e27516-4cfe-438c-b90c-e128c501cebd" class="">The html things such as <code class = "lang-python">container</code> , <code class = "lang-python">row</code> , <code class = "lang-python">class</code> are all part of bootstrap which allow me to create a space on the page to ask for the input</p><p id="564310f1-1530-4935-8aa0-7cad5bc23268" class="">We ask for the input using a form that says: <code class = "lang-python">&lt;form action=&quot;/linalg&quot; method=&quot;POST&quot;&gt;</code> ; the method is POST because we are POSTing information onto the app. Notice how the form action is linalg, the name of the html file. The rest of the section is just html to make the section look better.</p><p id="78ffdf70-b63a-46b2-a7e2-9795dc87c898" class="">Lastly, notice that the name is <code class = "lang-python">width</code> which will be important because that is the variable name that will be remembered by the form</p><p id="9324f6d5-56ff-46ab-b077-10a5fe755315" class="">Now onto, <code class = "lang-python">app.py</code></p><h3 id="edda2e51-5f1e-4c27-9069-51520926c2dd" class="">Processing Inputs</h3><pre id="722797b8-03b0-4df5-81b9-834514914de2" class="code"><code class = "lang-python">@app.route(&#x27;/linalg&#x27;, methods = [&#x27;GET&#x27;, &#x27;POST&#x27;])
+def linalg():
+    if request.method == &quot;POST&quot;:
+        req = request.form
+        if &quot;width&quot; in req:
+            width = req[&quot;width&quot;]
+            return redirect(url_for(&#x27;linalgresults&#x27;, width = width))
+    return render_template(&#x27;linalg.html&#x27;)
+
+@app.route(&#x27;/linalgresults/&lt;width&gt;&#x27;)
+def linalgresults(width):
+    width2 = float(width)
+    inputWidth = []
+    inputWidth.append(width2)
+    inputWidth = np.asanyarray(inputWidth)
+    inputWidth = inputWidth.reshape(-1,1)
+    iris = datasets.load_iris()
+    X = iris[&#x27;data&#x27;][:, 3:]  # petal width
+    y = (iris[&#x27;target&#x27;] == 2).astype(np.int)  # 1 if Iris Virgnica, else 0
+    logistic = LogisticRegression()
+    logistic.fit(X, y)
+    y_proba = logistic.predict(inputWidth)
+    answer = &quot;&quot;
+    if y_proba == 1:
+        answer = &quot;This plant is an Iris Virginica&quot;
+        return render_template(&#x27;linalgresults.html&#x27;, width = width, answer = answer)
+    else:
+        answer = &quot;This plant is not an Iris Virginica&quot;
+        return render_template(&#x27;linalgresults.html&#x27;, width = width, answer = answer)</code></pre><p id="94e93d57-2e6e-4483-b2d3-5d6d448f71cf" class="">I have two sections to elaborate on: <code class = "lang-python">linalg</code> and <code class = "lang-python">linalgresults</code></p><p id="23b11912-fbb9-48ae-b058-7003d09da6b1" class="">Let&#x27;s start with <code class = "lang-python">linalg</code> :</p><p id="eae0417e-cb92-46e6-81bf-519a0a2c43a1" class="">We must include <code class = "lang-python">methods = [&#x27;GET&#x27;, &#x27;POST&#x27;]</code> in order to not have any errors since we are using forms to accept the input. Then, we create a variable that accepts the value <code class = "lang-python">requests.form</code> and store it into a variable called <code class = "lang-python">req</code> . Think of <code class = "lang-python">req</code> as a dictionary that contains all the inputs. In this case, we take the input <code class = "lang-python">width = req[&quot;width&quot;]</code>   and then after that, we redirect the page to the html file: <code class = "lang-python">linalgresults</code> while also sending in the parameter width.</p><p id="4ea8d820-c04e-4fc4-b987-8b4271806985" class="">What this effectively does is first take in the input that was sent in through the form and then send it to the <code class = "lang-python">linalgresults</code> function in order to be processed and later outputted.</p><p id="9d34898c-f422-4686-bbbb-6d69ec9fe048" class="">Now, onto <code class = "lang-python">linalgresults</code> :</p><p id="6632baa0-c3a3-4128-b0b2-adb76498632b" class="">We take the <code class = "lang-python">width</code> and convert it into float because we want our petal widths to be numerical. Then, I reshape it using an <code class = "lang-python">np.array</code> which will allow me to put it into the Machine Learning Model. After dealing with all the Machine Learning model things, the most important line is <code class = "lang-python">return render_template(&#x27;linalgresults.html&#x27;, width = width, answer = answer)</code> . What this does is it renders in the html file while sending out the original width and also the answer as to whether the plant is or is not an Iris Virginica. </p><p id="42081a30-1171-4d34-9ae5-60126d1517c5" class="">This then leads us into the output of the answer:</p><h3 id="f4baa936-1bf4-43a0-8aa8-2997cd59be40" class="">Outputting the Answer</h3><p id="633ff051-0519-44e8-aefd-f6dc277ca4e3" class="">We now render in our template called <code class = "lang-python">linalgresults.html</code> which takes in our original <code class = "lang-python">width</code> and the <code class = "lang-python">answer</code> as to whether or not the plant is or is not an Iris Viriginica.</p><p id="c274bfc5-225d-4609-9809-ab2af8bb9476" class="">My code for this html file is: </p><pre id="f950dfe2-c479-425b-bf21-8d142616d41d" class="code"><code class = "lang-python">{%extends &quot;app_template_linalg.html&quot;%}
+{%block content%}
+    &lt;div class = &quot;container&quot;&gt;
+        &lt;div class = &quot;row&quot;&gt;
+            &lt;div class = &quot;col&quot;&gt;
+                &lt;h1&gt;Results&lt;/h1&gt;
+                &lt;hr&gt;
+                &lt;div class = &quot;card&quot;&gt;
+                &lt;div class = &quot;card-body&quot;&gt;
+                    &lt;h4&gt; Petal Width Given: {{width}}&lt;/h4&gt;
+                    &lt;br&gt;
+                    &lt;h2&gt;&lt;b&gt;{{answer}}&lt;/b&gt;&lt;/h2&gt;
+
+                &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+{%endblock%}</code></pre><p id="f7a628ee-dad2-46be-884f-2ba1c81beffb" class="">I again, extend the template and then I create a card-body to prettily output my data. Notice how I use double brackets {{ }} when referring to anything Pythonic. In this case, what appears is not the string literal &quot;width&quot; but instead the number that was given earlier. Then, the <code class = "lang-python">{{answer}}</code>, will not be the string literal &quot;answer&quot; but instead the answer string which tells us whether or not it is an Iris Viriginica or not.</p><p id="24d2f59e-911d-4a60-81fe-cbb46e474de7" class="">This is easily reproducible, we could use different ML algorithms and output different things we want. </p><h3 id="54373438-5818-40bf-b344-026cb75367b5" class="">Testing it Out</h3><p id="ac65c885-61cf-483a-ae08-74aeb38ce508" class="">Now that we got all the code out the way, let&#x27;s try this program out! I open my command prompt and do <code class = "lang-python">set flask_app = app.py</code> and then I call <code class = "lang-python">flask run</code> to run my program.</p><p id="ce9231ac-7278-4535-b55f-abd5a5ec4f9b" class="">Now, I am met with</p><figure id="5b46e053-8feb-46dd-90f0-d0c24bb4e017" class="image"><a href="Machine%20Learning%20Models%20on%20Flask%205b46e0538feb46dd90f0d0c24bb4e017/Untitled.png"><img style="width:720px" src="Machine%20Learning%20Models%20on%20Flask/Untitled.png"/></a><figcaption>linalg.html</figcaption></figure><p id="977e3011-df75-457a-9ddf-b423445b56c8" class="">which is equivalent to the page that asks me for input. I input a number like 2.5 which then I press Predict! which is the submit button on the form.</p><p id="fd86cb57-9651-4aa1-a848-35c6fe9f31e5" class="">After pressing this button, I get the results:</p><figure id="449d08bf-f17b-4c47-aeee-106778253347" class="image"><a href="Machine%20Learning%20Models%20on%20Flask/Untitled%201.png"><img style="width:720px" src="Machine%20Learning%20Models%20on%20Flask/Untitled%201.png"/></a><figcaption>linalgresults.html</figcaption></figure><p id="f01dce94-459d-4b90-a753-c60d6cdf5c76" class="">This tells us that the plant is indeed an iris virginica based on the width which tells us that this program works!</p><h3 id="67a2990b-a883-4271-91c0-5113069eb0ba" class="">Conclusion</h3><p id="35110929-7801-44cd-93d2-43adf3bdfdf4" class="">Hopefully, this sheds light onto how to connect your machine learning model with flask. I hope you guys enjoyed and were able to learn something from this post.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+
+</html>

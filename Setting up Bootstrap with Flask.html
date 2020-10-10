@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href = "css/prism.css" rel = "stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/bootFlaskback.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Flask with Bootrstrap</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 16, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <article id="055c572f-e8c3-4fa9-9f8d-40142b2dc0b0" class="page sans"><header><h1 class="page-title">Setting up Bootstrap with Flask</h1></header><div class="page-body"><p id="7e787381-8847-45ac-a11e-dc4f58197222" class="">The motivation behind setting up bootstrap with flask is to be able to design your website while linking it to your backend. For me, I can use Flask so that I can upload my model onto my website which is incredibly powerful. Not only that but I can use Flask to create a database for users. It truly allows you to do much more than plain html. However, we still want our website to look good which is why I utilize bootstrap, especially during Hackathons.  </p><h3 id="ae3c47df-226e-4df9-9e70-b1137f6a75fe" class="">Choose a Bootstrap Template</h3><pre id="ac02e2a9-3d1a-4abf-847a-9395d4b42df7" class="code"><code class = "lang-python">Link: https://startbootstrap.com/themes/
+I&#x27;m Using: https://startbootstrap.com/themes/one-page-wonder/</code></pre><h3 id="884b797e-eb28-4889-a22a-86853bec28a5" class="">Extract to Desktop (Or Wherever You are Placing it)</h3><figure id="f4cecb09-c79e-4b36-9ec7-f2a7ed61e947" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314231852936.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314231852936.png"/></a></figure><h3 id="1bb9949f-ef07-4e88-a6cf-809cb7a4b50d" class="">Placing Bootstrap Folder Stuff into Python Folder</h3><figure id="be8c1eaa-b1a2-4a7f-a9b2-d5eb152593af" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232140993.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232140993.png"/></a></figure><figure id="a96d67cd-a8a1-44f4-b446-60c590ada313" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232215419.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232215419.png"/></a></figure><figure id="776db2b6-1ac6-4813-898e-0a9bcfe8eba6" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232651508.png"><img style="width:509px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232651508.png"/></a></figure><p id="26b9e07f-7963-48f3-aff9-ba218626eb58" class="">Place the css, img, scss, vendor folders into static</p><h3 id="919a3b20-663a-43bd-8b21-6dffdf65d906" class="">REMEMBER TO PLACE index.html into “TEMPLATES”</h3><p id="d42bb825-ecde-4975-9925-d93607e6f5d3" class="">RULE OF THUMB: templates is for your html files and static is for your .js, .css. png…. everything else</p><h3 id="85838e44-4367-4436-bd6a-e1f47d17319f" class="">Changing Python File</h3><pre id="ec91476b-0b8d-4324-bf15-c9dafd2af4de" class="code"><code class = "lang-python">from flask import Flask, escape, request, render_template
+
+app = Flask(__name__)
+
+@app.route(&#x27;/&#x27;)
+def index():
+    return render_template(&#x27;index.html&#x27;)</code></pre><p id="4929c0ec-d2e3-4da0-8a7d-9cc79bd20bf2" class="">render_template basically allows us to render the index.html when the initial website is called</p><h3 id="20551e49-b656-46fd-b1bb-9356f3dfea69" class="">Changing html File</h3><p id="34ea9ad4-ee2b-4f06-987d-c687c23fe3b7" class="">We have to change all the .css,.js,.png,.jpg references because we put all of them into a static folder which changes the directory.</p><p id="3b466f70-deaa-40bf-8512-f7dc26ff54d5" class=""><strong>Before:</strong></p><figure id="ca55b850-c542-4642-8057-d484ccd1f4df" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232819994.png"><img style="width:505px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232819994.png"/></a></figure><p id="12c0814e-9f31-43ac-86d7-a1d69bef97d8" class=""><strong>After:</strong></p><figure id="8694d649-e8e1-46d1-b5d3-8a4c85da9a01" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232917545.png"><img style="width:748px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314232917545.png"/></a></figure><p id="8247e775-b732-48c1-ae61-edf9712e06d8" class="">We change every single reference for a .css and .js reference to a file into something that looks like</p><pre id="40503e6d-54ca-4122-8465-ca7c044ccf73" class="code"><code class = "lang-python">&lt;link href=&quot;{{url_for(&#x27;static&#x27;, filename = &#x27;vendor/bootstrap/css/bootstrap.min.css&#x27;) }}&quot; rel=&quot;stylesheet&quot;&gt;</code></pre><h3 id="87a4c01c-a5f7-4696-b07f-0f04f0adcdea" class="">CSS</h3><figure id="45b70b60-09d5-45b5-9b52-083f93dd1edf" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233159164.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233159164.png"/></a></figure><h3 id="170f574f-260e-4122-8309-385965169a1d" class="">JAVASCRIPT</h3><figure id="57a57715-6961-49a6-bc41-d582673a0c93" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233253373.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233253373.png"/></a></figure><h3 id="7c59c9ad-0134-414b-a431-98bc04dd9379" class="">IMAGES</h3><figure id="12056b0d-26e2-4f6e-8cfd-3f7bb4449bb3" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233441736.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233441736.png"/></a></figure><p id="65766760-dc73-404f-873e-39840fd6c4ad" class="">GENERAL STRUCTURE:</p><p id="fe05f246-2741-476a-9b61-5d17c8ae5413" class="">{{ }} DOUBLE BRACKETS to indicate we are using flask structure</p><p id="9ce1195b-7509-4c1d-9899-a2c623603af7" class="">url_for locates the file location</p><p id="de1a8b16-80c5-4448-8d1b-153866606274" class="">‘static’ is basically the directory where everything is at</p><h3 id="a3c5c119-e997-4583-9f20-d4dc09bdd932" class="">RUN PROGRAM</h3><figure id="cc805e4d-22bb-442a-ba53-0ed4aef8a615" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233809119.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233809119.png"/></a></figure><h3 id="89fef87d-0e7a-4e14-a149-5ca20f85efe5" class="">IT WORKS!</h3><figure id="10f8f50d-5556-4c5d-a6a3-a9e05266966b" class="image"><a href="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233823535.png"><img style="width:700px" src="Setting%20up%20Bootstrap%20with%20Flask/image-20200314233823535.png"/></a></figure></div>
+            <h3 id="e75fe5a7-6231-4da0-a3ae-cf9ac31aa758" class="">Conclusion</h3><p id="5ef5515a-b8aa-4f4f-8ca2-3d365bb1c301" class="">You now know how to implement Flask with Bootstrap! Hopefully, this motivates you to try for yourself. </p></div>
+            </article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+</body>
+
+</html>

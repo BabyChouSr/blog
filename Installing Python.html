@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+        .bookmark {
+            text-decoration: none;
+            max-height: 8em;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .bookmark-title {
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 1.75em;
+            white-space: nowrap;
+        }
+
+        .bookmark-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-info {
+            flex: 4 1 180px;
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bookmark-image {
+            width: 20%;
+            display: block;
+            position: relative;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+
+        .bookmark-description {
+            color: rgba(55, 53, 47, 0.6);
+            font-size: 0.55em;
+            overflow: hidden;
+            max-height: 4.5em;
+            word-break: break-word;
+        }
+
+        .bookmark-href {
+            font-size: 0.55em;
+            margin-top: 0.25em;
+        }
+         figure {
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+         figcaption {
+            opacity: 0.5;
+            font-size: 85%;
+            margin-top: 0.5em;
+        }
+        .source {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 1.5em;
+            word-break: break-all;
+    }
+         
+        .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+         .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+        .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+        }
+
+        .table_of_contents-indent-2 {
+            margin-left: 3rem;
+        }
+
+        .table_of_contents-indent-3 {
+            margin-left: 4.5rem;
+        }
+
+        .table_of_contents-link {
+            text-decoration: none;
+            opacity: 0.7;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+        } 
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pythoninstallback.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Installing Python</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 27, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="226aa1f3-e5cf-4d77-8e73-813a8201042a" class="page sans"><header><h1 class="page-title">Installing Python</h1></header><div class="page-body"><p id="a3fc1b2d-7bbe-46a7-a49c-62297c9e20d1" class="">In this blog, I will be going over how to install Python with PyCharm as well as some of the libraries that you might need. </p><p id="697cdd82-842a-4725-b2ae-4907be4f3345" class="">Here is a table of contents so that you can jump to whatever step you are on</p><nav id="99b0cdfe-cbb4-4e23-b5a1-ebed9a19d321" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#49a06ebc-fd61-4246-a101-89fe2958da2d">Links Needed</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bf8e18e0-b68e-44a8-a8d5-ea17bb943efe">Installing Python</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0415b75a-e34a-43fd-8966-c1d5f6c90e7c">Installing Libraries</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bcfa3d5f-4650-4192-9993-eb68a0cc7cec">Installing PyCharm</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#21a649bf-2556-4c13-b113-49f5971c494b">Conclusion</a></div></nav><h3 id="49a06ebc-fd61-4246-a101-89fe2958da2d" class="">Links Needed</h3>
+             
+             
+             <figure id="d6661c78-fb49-4d40-b696-839a9e817283"><a href="https://www.jetbrains.com/pycharm/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">PyCharm: the Python IDE for Professional Developers by JetBrains</div><div class="bookmark-description">Save time while PyCharm takes care of the routine. Focus on the bigger things and embrace the keyboard-centric approach to get the most of PyCharm&#x27;s many productivity features. PyCharm knows everything about your code. Rely on it for intelligent code completion, on-the-fly error checking and quick-fixes, easy project navigation, and much more.</div></div><div class="bookmark-href"><img src="https://www.jetbrains.com/favicon-16x16.png" class="icon bookmark-icon"/>https://www.jetbrains.com/pycharm/</div></div><img src="http://resources.jetbrains.com/storage/products/pycharm/img/meta/pycharm_1280x800.png" class="bookmark-image"/></a></figure><figure id="e18daf5b-2e95-4a1f-b7eb-1803e936e12c"><a href="https://www.python.org/downloads/](https://www.python.org/downloads/)" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Download Python</div><div class="bookmark-description">Information about specific ports, and developer info Source and binary executables are signed by the release manager or binary builder using their OpenPGP key.</div></div><div class="bookmark-href"><img src="https://www.python.org/static/favicon.ico" class="icon bookmark-icon"/>https://www.python.org/downloads/](https://www.python.org/downloads/)</div></div><img src="https://www.python.org/static/opengraph-icon-200x200.png" class="bookmark-image"/></a></figure><p id="b4a67c41-3ce8-4bfd-aa6c-66f84539d218" class=""></p>
+             
+             <h3 id="bf8e18e0-b68e-44a8-a8d5-ea17bb943efe" class="">Installing Python</h3><ol id="d64df73a-96aa-4f6a-bf3e-213f388c2ba4" class="numbered-list" start="1"><li>Go on <a href="http://python.org/">python.org</a> and download it.</li></ol><figure id="a0a7de58-de17-4b59-8014-78a16c454591" class="image"><a href="https://lh4.googleusercontent.com/z478xB-lr-3zMzmPbmSYweqlIzKyxmOtYqOcIRImgeMKg9fU30pXIhJ1sLuOuwgV8zOuuV5R2S4JJ6PJRk04EEswkad_mCamW7HcCz_z9rAThUQkRmC3QLm9mioo78mpdIGPwEU"><img style="width:576px" src="https://lh4.googleusercontent.com/z478xB-lr-3zMzmPbmSYweqlIzKyxmOtYqOcIRImgeMKg9fU30pXIhJ1sLuOuwgV8zOuuV5R2S4JJ6PJRk04EEswkad_mCamW7HcCz_z9rAThUQkRmC3QLm9mioo78mpdIGPwEU"/></a></figure><p id="157900eb-bf18-430c-8dd6-a5d1b0de2923" class="">2. Run the executable program and make sure to <strong>add to PATH</strong></p><figure id="e57eed33-8ee9-421c-b86e-e1e64e75241f" class="image"><a href="https://datatofish.com/wp-content/uploads/2018/10/0001_add_Python_to_Path.png"><img style="width:576px" src="https://datatofish.com/wp-content/uploads/2018/10/0001_add_Python_to_Path.png"/></a></figure><p id="0a14782b-52c3-4960-84f6-f2aa5bbd5480" class="">
+</p><h3 id="0415b75a-e34a-43fd-8966-c1d5f6c90e7c" class="">Installing Libraries</h3><p id="df9d6320-bd10-4b12-aa79-52daec2a5f9e" class="">After downloading python, press <code>Windows Key + R</code> Then type <code>cmd</code> and press enter.</p><p id="41eecc3d-bee4-4a12-b837-cfcf9b873123" class="">You Will Need the Following Commands:</p><ul id="2e77f029-faba-48ad-a733-ddd9fdec2aa1" class="bulleted-list"><li><code>python -m pip install matplotlib</code></li></ul><ul id="76448038-2874-4c18-9f96-b21215172a2e" class="bulleted-list"><li><code>python -m pip install scikit-learn</code></li></ul><ul id="2752433e-bc55-487d-98e3-9cb7b8e3ac8b" class="bulleted-list"><li><code>python -m pip install numpy</code></li></ul><ul id="0af1b4d7-09c5-455b-a72c-ba73a8cc7b26" class="bulleted-list"><li><code>python -m pip install scipy</code></li></ul><ul id="3dde2987-c7b0-4980-b3f2-93519b3197f2" class="bulleted-list"><li><code>python -m pip install pandas</code></li></ul><ul id="598ec512-beaa-488a-91d5-3a3907b112c0" class="bulleted-list"><li><code>python -m pip install seaborn</code></li></ul><ul id="00f2a706-5f5c-4c52-8aa1-5b3a1ac8a4b3" class="bulleted-list"><li><code>python -m pip install jupyter notebook </code></li></ul><p id="3bdde253-2616-4d64-9d9c-6e1edc35412c" class="">Drag the commands in the command prompt one by one (make sure each is downloaded before moving on)</p><figure id="10c601ff-2e52-4e2a-96c9-e4635b7d1dd9" class="image"><a href="https://lh4.googleusercontent.com/iXZfxdScRbvDLP1byRxlze4kiSxlPup8aWjFpfezP_4XLMqsda4PSuMRE4VMKoqEX_dy3FjJ4Zy0LTcF3hWY4nei91H0jI7SNa-tNdWeE5C7GaskqtJXL3W-r1Q85UUkmqsYLXY"><img style="width:576px" src="https://lh4.googleusercontent.com/iXZfxdScRbvDLP1byRxlze4kiSxlPup8aWjFpfezP_4XLMqsda4PSuMRE4VMKoqEX_dy3FjJ4Zy0LTcF3hWY4nei91H0jI7SNa-tNdWeE5C7GaskqtJXL3W-r1Q85UUkmqsYLXY"/></a></figure><p id="c6d05493-0b58-462c-a9fa-68fbc54804c1" class="">
+</p><h3 id="bcfa3d5f-4650-4192-9993-eb68a0cc7cec" class="">Installing PyCharm</h3><ol id="efb79cdd-fcf6-41cb-9052-c882fdae98d1" class="numbered-list" start="1"><li>Go on the jetbrains website to download Pycharm</li></ol><ol id="ed68a4a3-04e4-434d-acdf-fe7b8cfa7a47" class="numbered-list" start="2"><li>Open up a new project.</li></ol><ol id="ab3f0e2c-d4d7-4d1c-99f2-a0c17bff64b9" class="numbered-list" start="3"><li>Go To File - &gt; Settings -&gt; Project Interpreter -&gt; Set as Python 3.7(Whatever Version Python You Got)</li></ol><figure id="2ecf202d-3860-4672-a122-b9920d371088" class="image"><a href="https://lh3.googleusercontent.com/SPtMIHgWoPViP-w8-eJyQmjfJWPjrSnwpsH34tYGyQZYBBAhRVNf1Rk-OCtXEbLFPaU2Fckxv_w_4KD8mxebDrOUSJLHbLzA63yOSo9zmdkT16FTzhIp-zRjR8X6T3ThV2RCGJ4"><img style="width:528px" src="https://lh3.googleusercontent.com/SPtMIHgWoPViP-w8-eJyQmjfJWPjrSnwpsH34tYGyQZYBBAhRVNf1Rk-OCtXEbLFPaU2Fckxv_w_4KD8mxebDrOUSJLHbLzA63yOSo9zmdkT16FTzhIp-zRjR8X6T3ThV2RCGJ4"/></a></figure><p id="41b26b07-5b5b-4c12-8ff5-15d2910e7e4e" class="">
+</p><h3 id="21a649bf-2556-4c13-b113-49f5971c494b" class="">Conclusion</h3><p id="888cdaed-8e49-4327-9c92-4294f8ef191f" class="">That&#x27;s it! Installing Python is really that Easy!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

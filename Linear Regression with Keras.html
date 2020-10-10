@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+     <style>
+    .code,
+        code {
+            background: rgba(135, 131, 120, 0.15);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+            tab-size: 2;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+        .code {
+            padding: 1.5em 1em;
+        }
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+        .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+         figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+         .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+         .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+         
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/linRegKerasBack.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Linear Regression with Keras</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 22, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="0289cdd5-dee8-486a-85c7-c2ecc82b8e8f" class="page sans"><header><h1 class="page-title">Linear Regression with Keras</h1></header><div class="page-body"><p id="5793cca6-941a-4746-9b9f-d044919afb59" class="">In this blog, I will go over how to implement a feed-forward neural network with Keras for Linear Regression. This is an extremely simple neural network and does not require too many layers yet it still outperforms the normal linear regression model.</p><p id="b3abf16e-a6f9-4ea6-94e6-63caf9dbfee5" class="">I will be doing this analysis in jupyter notebook on the Boston Housing dataset. If you guys want to watch a video on this topic, check the video below. </p><figure id="87cc3b0d-20d5-4670-b7df-f8926b37001c"><div align = "center"><iframe width="560" height="315" src="https://www.youtube.com/embed/S6OQ1LE5OWA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><figcaption>Linear Regression with Keras</figcaption></div></figure> <p id="1f6f0d75-b153-4d72-bf6c-cbd0b5a5f3b0" class="">
+</p><h3 id="eadf4df2-cc4f-48f9-a4fc-6d7c7c804968" class="">Importing Libraries</h3><p id="81d8287a-ecc6-4d16-9a81-062df9195b98" class="">Our first step is always to import the libraries that we will be using</p><pre id="031e515d-c0cd-4b1c-aa54-70cad36a09d9" class="code"><code class = "lang-python">import numpy as np
+import pandas as pd
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+
+import tensorflow as tf
+from keras.layers import Dense
+from keras.models import Model, Sequential</code></pre><p id="5ecb7b9c-c003-42c0-acc9-7a2f1f5a4efd" class="">These are the libraries that we will be using in this tutorial. Some that I would like to point out are the keras libraries such as Dense and Sequential. Sequential just tells our model that it is linear; it is a stack of layers from left to right. Dense just means the neural network will be a simple feed-forward neural network instead of something like an RNN or CNN. </p><p id="6d3d54b6-cebc-4ce7-9221-31a78f39b151" class="">
+</p><h3 id="554f384c-2dfc-4cac-a12d-934b6515da88" class="">Reading the Data</h3><pre id="63f949d9-2272-45d4-a7af-9aa1cdccb2ac" class="code"><code class = "lang-python">housing = datasets.load_boston()
+X = pd.DataFrame(housing[&#x27;data&#x27;])
+y = pd.DataFrame(housing[&#x27;target&#x27;])
+X.columns = housing.feature_names
+X.head()</code></pre><p id="25e63c65-4076-44c1-972a-13a9e6a17d77" class="">We simply read in the data from the boston housing dataset.</p><p id="767ea29d-4ca4-45c6-a49c-71d0b6d84bb3" class="">
+</p><h3 id="a2de64ee-9efb-480a-bdf7-d1d188a3c6d3" class="">Training the Model</h3><pre id="9d801309-8169-4093-b3dd-4515f15ac47f" class="code"><code class = "lang-python">X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.20, random_state = 42)
+model = Sequential()
+model.add(Dense(128,input_dim = 13, activation = &quot;relu&quot;))
+model.add(Dense(64, activation = &quot;relu&quot;))
+model.add(Dense(1))
+model.compile(optimizer = &quot;Adam&quot;, loss = &quot;mean_squared_error&quot;)
+model.fit(X_train,y_train, epochs = 150) # TRY DIFFERENT ONES</code></pre><p id="6df3a2a9-bc3f-4319-a073-90bf92edc0f7" class="">We utilize train test split to split the dataset so that we could train it. </p><ol id="ed9d93d3-869f-45d1-9db8-04550e01af1e" class="numbered-list" start="1"><li>We call the Sequential function because that&#x27;s the type of model we are using</li></ol><ol id="386832d6-86dd-4953-b51c-47b8c3b753b7" class="numbered-list" start="2"><li>We create our first layer with a 128 neurons and and input dimension of 13. This is because we are receiving 13 inputs from the dataset (CRIM, ZN, INDUS, CHAS.....) We utilize a relu activation function because this is just the common one most use.</li></ol><ol id="58b105ee-a364-43dc-af4b-742468bc486a" class="numbered-list" start="3"><li>We then create a layer with 64 neurons also with an activation of a relu.</li></ol><ol id="7f1cf4f6-e4b4-4765-b3cb-d10401315107" class="numbered-list" start="4"><li>The last layer is simply one neuron because this one neuron is the housing price. </li></ol><ol id="ab037a68-b90d-485b-ac12-f44d49f34393" class="numbered-list" start="5"><li>We compile the model using the Adam optimizer (another common one) and we utilize a loss function of mean squared error because we have continuous outputs that we measure.</li></ol><ol id="f03a0959-b4fb-4571-8e1f-b0575c66bd04" class="numbered-list" start="6"><li>We then fit the function and tell the number of epochs we are using (number of generations we train over)</li></ol><p id="69012d76-0956-4341-8977-fa0bc04b2e12" class="">Our last epoch ended like this, with a mean squared error of 18.8533</p><pre id="1e827230-2744-42b2-8036-b4f907a022f2" class="code"><code class = "lang-python">Epoch 150/150
+404/404 [==============================] - 0s 35us/step - loss: 18.8533</code></pre><h3 id="ed5e11a9-3861-43eb-9b64-91d20ee5dee6" class="">Plotting and Comparing</h3><p id="750445f3-2f23-4069-adbb-0d0f6c132370" class="">We will now plot this graph to see how well we did.</p><pre id="8d4ab23c-eb8e-4b2b-b8eb-f7fdc1a722c7" class="code"><code class = "lang-python">import matplotlib.pyplot as plt
+%matplotlib inline
+preds = model.predict(X_test)
+plt.plot(X_test[&#x27;LSTAT&#x27;],y_test, &quot;b.&quot;)
+plt.plot(X_test[&#x27;LSTAT&#x27;],preds, &quot;g.&quot;)
+plt.show()</code></pre><figure id="f836b5d8-0189-49a9-add3-2c9185eabf1a" class="image"><a href="Linear%20Regression%20with%20Keras/Untitled.png"><img style="width:372px" src="Linear%20Regression%20with%20Keras/Untitled.png"/></a><figcaption>Housing Price vs. % of Lower Status Population</figcaption></figure><p id="0c1d2b41-7c7f-406d-a5dc-1b2b3bfebab0" class="">As we can see, there is quite a lot of overlap in the curvature of the green and blue graph which means we did pretty well. Now, let&#x27;s see the Machine Learning version of this.</p><pre id="7ece9e74-19b2-4fd9-ad16-cef0662440f0" class="code"><code class = "lang-python">from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+linReg = LinearRegression()
+linReg.fit(X_train, y_train)
+preds2 = linReg.predict(X_test)
+print(mean_squared_error(y_test, preds2))
+
+
+plt.plot(X_test[&#x27;LSTAT&#x27;],y_test, &quot;b.&quot;)
+plt.plot(X_test[&#x27;LSTAT&#x27;],preds2, &quot;g.&quot;)
+plt.show()</code></pre><p id="7b50696b-4340-4212-8fc6-0bb55d1718fa" class="">This is a simple linear regression model.</p><p id="4c7d81de-bc6f-4680-9fdb-d2202ecfff0c" class="">We get a mean squared error of:  24.29111947497383 and a plot that looks like this</p><figure id="df0430e0-406f-4d29-b9cc-07d8de333dc6" class="image"><a href="Linear%20Regression%20with%20Keras/Untitled%201.png"><img style="width:367px" src="Linear%20Regression%20with%20Keras/Untitled%201.png"/></a><figcaption>Housing Price vs. % of Lower Status Population</figcaption></figure><p id="a59e2d11-c98f-400f-afbc-2efb48c3c682" class="">As you can see the Machine Learning Model does not do too bad. However, the deep learning model still outperforms it with much less error.</p><p id="a1b99cd8-7753-448e-864e-c26190329be1" class="">
+</p><h3 id="c0bbf82e-987b-4799-8608-b7670c84f73c" class="">Conclusion</h3><p id="ed712466-e7d9-4884-97cc-72c2eb7c8b60" class="">I hope you guys enjoyed this blog post about Deep Learning with Keras and implementing Linear Regression. I hope you guys feel motivated to maybe try for yourselves!</p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src = "js/prism.js"></script>
+
+</body>
+
+</html>

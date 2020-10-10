@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Christopher Chou</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+<link href="css/stylesAddon.css" rel="stylesheet">  
+    <link href="css/prism.css" rel="stylesheet">  
+</head>
+
+<body>
+
+  <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Christopher Chou</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="MLhome.html">Machine Learning</a>
+          </li> 
+            <li class="nav-item">
+            <a class="nav-link" href="datavisualizationhome.html">Data Visualization</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="webdevhome.html">Website Development</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="programlanghome.html">Programming Languages</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="physicshome.html">Physics</a>
+          </li>         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/pythonVar.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Values, Variables, Types</h1>
+            <span class="meta">Posted by
+              Christopher Chou
+              on April 27, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         <article id="434381f2-e080-4645-a671-3d39a05cc67c" class="page sans"><header><h1 class="page-title">Values, Variables, and Types</h1></header><div class="page-body"><p id="2f74bfbd-ae32-44ba-91f0-f2db81b3e4c9" class="">In this blog, I will be going over how variables work in Python and the different data types.</p><p id="cd15170d-61fd-4d0f-9468-2c46181ee679" class="">I will have a table of contents for each section that I go through</p><nav id="cbc84274-43f2-4988-84cf-bec77446979f" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2c196074-dedc-4090-ba9a-d1ec2167082e">Values and Types</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#99dc9c14-bc3d-402c-a82e-59790fe75989">Assignment Statements</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#170ab324-f222-4cf2-b7c0-ecfc337188fe">Variable Names</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5391f8a8-905e-4700-a140-44195af32de7">Expressions and Statements</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#10ca0491-4e52-41b6-b813-41ebe6525f2b">Arithmetic Operators and Order</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bde43381-7dfb-4175-a7a0-e63ec834a5a5">String Operations</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a22de222-c31c-4072-98f5-55e1cfb6fcd2">Comments</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3de8c3ae-a78a-4cad-931c-33f1ef4d8ff8">Conclusion</a></div></nav><h3 id="2c196074-dedc-4090-ba9a-d1ec2167082e" class="">Values and Types</h3><p id="58be6010-ab7e-4ac9-a2f5-1276c7015668" class="">A value is a basic thing such as numbers or letters. A value can be something like 3, 32.0, or &quot;Hey.&quot; These values are of different types.</p><ul id="5a3c3644-f049-494f-8c0a-273d93c318c3" class="bulleted-list"><li>3 is an integer because it cannot have decimals after it</li></ul><ul id="ecd4a5f6-f655-4e24-b4f2-573e047faafc" class="bulleted-list"><li>32.0 is a floating-point number because it is has decimals afterwards. Integers are a subset of floating-point numbers since floating-point numbers include all numbers that don&#x27;t have decimals afterwards and those that do.</li></ul><ul id="aceb215b-b554-4e97-9ce4-cb74756770a1" class="bulleted-list"><li>&quot;Hey&quot; is a string because it contains characters or letters instead of numbers</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6b7a161f-0174-4425-8614-82646581569a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Variable: A name that refers to a certain value</div></figure><p id="0189d6d6-8ed6-4bb2-ac21-26688888416d" class="">
+</p><h3 id="99dc9c14-bc3d-402c-a82e-59790fe75989" class="">Assignment Statements</h3><p id="73ab50fc-bc69-45e2-ae29-e6b8ef1d7480" class="">As assignment statement gives a value to a certain variable. </p><p id="e14b6615-12c4-4238-8aba-38b1afcdf65e" class="">This can look something like this:</p><pre id="8d6cf511-d0af-45c5-8d0c-c7fc85cf6057" class="code"><code class = "lang-python">x = 8
+y = 32.234234
+message = &quot;Hi, my name is Chris&quot;</code></pre><p id="b27f56b9-5205-40cf-a932-52693b137d75" class="">
+</p><h3 id="170ab324-f222-4cf2-b7c0-ecfc337188fe" class="">Variable Names</h3><p id="30192f7c-3b1e-4c14-b626-f3cc18dfc4a3" class="">By convention, programmers use something known as camelCase where the first word is lowercase and every word afterwards would be Capitalized.  We also often separate the words in variables using underscores.</p><p id="e8e2bf58-a65a-4417-a2bf-77c8e876cb82" class="">Good Name Examples:</p><ul id="453ebdc1-477b-4f22-99e3-f8870295441a" class="bulleted-list"><li>nameOfSister</li></ul><ul id="78e95c10-f3e5-4d63-be7e-6cee7c109d67" class="bulleted-list"><li>myBrother</li></ul><ul id="a2104250-cefb-467e-9d25-eb53e6568cf5" class="bulleted-list"><li>set_of_oranges</li></ul><ul id="26401381-ae63-431d-8dfe-b0844cea8830" class="bulleted-list"><li>my_thing_of_beauty</li></ul><p id="42024d35-8e3f-41d4-82b4-018892476036" class="">Note that we cannot start our variable name with numbers. Also, note there are some words that we can&#x27;t use because they are python keywords reserved to call certain functions or reference pre-defined structures or variables.</p><p id="be2ef34f-3787-4410-a5e5-df1c856f878e" class="">These include:</p><pre id="97c35f80-e915-4977-8a7a-f8e3a3db38a1" class="code"><code class = "lang-python">False      class      finally    is         return
+None       continue   for        lambda     try
+True       def        from       nonlocal   while
+and        del        global     not        with
+as         elif       if         or         yield
+assert     else       import     pass
+break      except     in         raise</code></pre><p id="53e875f9-7dfb-405d-ae85-1708fdf81fc0" class="">
+</p><h3 id="5391f8a8-905e-4700-a140-44195af32de7" class="">Expressions and Statements</h3><p id="3ff51b22-3e61-46dc-9df3-b6e39c99deeb" class="">Expressions are a combination of values, variables, and operators.</p><p id="22ec5b7a-bac0-4ddf-9c4a-f4e5f86774f1" class="">This could be something like:</p><ul id="0a96edad-44f4-48a1-aac8-24f8eb851d1f" class="bulleted-list"><li>17</li></ul><ul id="51b215c7-aa08-4504-bee9-c03ef0b8063c" class="bulleted-list"><li>n+2</li></ul><ul id="88759b0f-32fa-4d7a-9026-d160ea4e6b88" class="bulleted-list"><li>n/10</li></ul><p id="24068285-5a78-497d-96fd-7012d32bce27" class="">Statements create a variable or display a value:</p><ul id="8b5630bc-2eb2-4800-b2b8-8e5aeb2ae252" class="bulleted-list"><li>n = 5</li></ul><ul id="a3528540-dd95-48fa-94e9-bed055715a8d" class="bulleted-list"><li>print(&quot;Hello World&#x27;)</li></ul><p id="f1e7ac07-937a-4ecd-bd1c-5b9b5ddd3ad6" class="">
+</p><h3 id="10ca0491-4e52-41b6-b813-41ebe6525f2b" class="">Arithmetic Operators and Order</h3><p id="72042319-a9cc-4aa8-a3ab-928023b4162b" class="">All expressions follow the order known as PEMDAS which tell us the order of operations is</p><ul id="b6fc7e91-9309-477b-a347-2f22cdff174b" class="bulleted-list"><li>Parantheses</li></ul><ul id="a4ceb190-97b4-4370-b17d-68e7be31def7" class="bulleted-list"><li>Exponents</li></ul><ul id="f3f721f9-aafa-4c84-bdb8-3e4360e36252" class="bulleted-list"><li>Multiplication</li></ul><ul id="b0f7e24d-fa01-435b-96b1-ca30b2647b73" class="bulleted-list"><li>Division</li></ul><ul id="7662b8e1-3c0b-44b6-b3d5-3e7ed4f1c4b6" class="bulleted-list"><li>Addition</li></ul><ul id="431141f0-76ad-494a-9e13-ac847de7b874" class="bulleted-list"><li>Subtraction</li></ul><p id="ce7d7a73-fb25-48e2-b03a-0b51edc3dc06" class="">We are allowed to do various arithmetic operations such as:</p><pre id="77139e11-9e74-4f12-9abc-7c0f1feffa1f" class="code"><code class = "lang-python">x = 2
+n = 4
+print(x+n) #Outputs 6
+
+n = x + 5 # n is now 7</code></pre><p id="f62a840d-0113-491b-966a-d1b48ab978ce" class="">
+</p><h3 id="bde43381-7dfb-4175-a7a0-e63ec834a5a5" class="">String Operations</h3><p id="0483fa3a-82e2-44c3-81f5-e6ae5533dce9" class="">When we want to combine string, we can do a procedure known as concatenation</p><p id="0b7b0382-71fe-40f2-87d6-b62aea4abbef" class="">Therefore, adding Strings would look something like:</p><pre id="eb9a87e2-35eb-4813-a9a9-24b64e99da1c" class="code"><code class = "lang-python">x = &quot;Hey&quot;
+y = &quot; boy&quot;
+z = x + y
+print(z) # Outputs Hey boy</code></pre><p id="0785a8d0-a798-4a1a-bdfb-6764e70580f5" class="">We can even multiply Strings. This will cause the original string to be duplicated various times</p><pre id="3b7c0cae-fa3e-4cb2-b81a-af41b373dc72" class="code"><code class = "lang-python">x = &quot;woah&quot;
+print(x *3)#Outputs woahwoahwoah</code></pre><p id="0b498739-d289-4b2b-b024-22badf7f17c7" class="">
+</p><h3 id="a22de222-c31c-4072-98f5-55e1cfb6fcd2" class="">Comments</h3><p id="ade1ffed-b3e2-4268-915f-0010d2039bcd" class="">We can put comments in the program that the program does not run. Commenting out line by line would look something like this:</p><pre id="4ab60cea-d964-4f27-9d0f-1939e6ae9c62" class="code"><code class = "lang-python">#don&#x27;t run this 
+#hey 
+# asidjaosid</code></pre><p id="b54b712e-f768-4a70-be4d-ba1fd495f35e" class="">All of these will not produce an error since they are comments</p><p id="da5d5745-6f0d-4557-ae3b-5dbfa499bf5a" class="">Commenting out paragraphs, we use triple quotation marks</p><pre id="c203baba-4897-4a4d-a6c4-b1e05975f99c" class="code"><code class = "lang-python">&quot;&quot;&quot;
+The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature&#x27;s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
+&quot;&quot;&quot;</code></pre><p id="29d74089-8864-467a-93d6-3b96026713bc" class="">This entire paragraph won&#x27;t run</p><p id="72f5f2da-fd09-4be4-82a0-9d91fd858de1" class="">
+</p><h3 id="3de8c3ae-a78a-4cad-931c-33f1ef4d8ff8" class="">Conclusion</h3><p id="3dddef59-3523-412d-aae8-c1a5b4df69b5" class="">Thank you for going through this entire blog and I hoped that you were able to learn something from it! </p></div></article>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+ <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/channel/UC_6tdAt0VzazX0FwMTg3qFw">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/groups/406915366823943">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BabyChouSr">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Christopher Chou &copy; 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+    <script src="js/prism.js"></script>
+</body>
+
+</html>
